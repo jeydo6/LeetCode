@@ -9,6 +9,7 @@ namespace Leetcode
 {
     class Program
     {
+        //T0D0: Migrate to UnitTests
         static void Main(String[] args)
         {
             #region 771
@@ -248,6 +249,49 @@ namespace Leetcode
             //};
             //algorithm_876.MiddleNode(head);
             #endregion
+            #region 557
+            //_557 algorithm_557 = new _557();
+            //algorithm_557.ReverseWords("Let's take LeetCode contest");
+            #endregion
+            #region 1160
+            //_1160 algorithm_1160 = new _1160();
+            //algorithm_1160.CountCharacters(
+            //    new String[]
+            //    {
+            //        "cat",
+            //        "bt",
+            //        "hat",
+            //        "tree"
+            //    },
+            //    "atach"
+            //);
+            #endregion
+            #region 1185
+            //_1185 algorithm_1185 = new _1185();
+            //algorithm_1185.DayOfTheWeek(31, 8, 2019);
+            #endregion
+            #region 1025
+            //_1025 algorithm_1025 = new _1025();
+            //algorithm_1025.DivisorGame(4);
+            #endregion
+            #region 821
+            //_821 algorithm_821 = new _821();
+            //algorithm_821.ShortestToChar("loveleetcode", 'e');
+            #endregion
+            #region 1030
+            //_1030 algorithm_1030 = new _1030();
+            ////algorithm_1030.AllCellsDistOrder(2, 2, 0, 0);
+            //algorithm_1030.AllCellsDistOrder(2, 3, 1, 2);
+            #endregion
+            #region 1047
+            //_1047 algorithm_1047 = new _1047();
+            //algorithm_1047.RemoveDuplicates("abbaca");
+            #endregion
+            #region 344
+            //_344 algorithm_344 = new _344();
+            //algorithm_344.ReverseString(new Char[] { 'H', 'e', 'l', 'l', 'o' });
+            #endregion
+
         }
     }
 }

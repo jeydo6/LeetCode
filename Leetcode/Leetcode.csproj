@@ -48,12 +48,19 @@
     <Compile Include="Algorithms\1.cs" />
     <Compile Include="Algorithms\1002.cs" />
     <Compile Include="Algorithms\1021.cs" />
+    <Compile Include="Algorithms\1025.cs" />
+    <Compile Include="Algorithms\1030.cs" />
+    <Compile Include="Algorithms\1047.cs" />
     <Compile Include="Algorithms\1051.cs" />
     <Compile Include="Algorithms\1078.cs" />
     <Compile Include="Algorithms\1108.cs" />
     <Compile Include="Algorithms\1122.cs" />
+    <Compile Include="Algorithms\1160.cs" />
+    <Compile Include="Algorithms\1185.cs" />
+    <Compile Include="Algorithms\344.cs" />
     <Compile Include="Algorithms\461.cs" />
     <Compile Include="Algorithms\509.cs" />
+    <Compile Include="Algorithms\557.cs" />
     <Compile Include="Algorithms\559.cs" />
     <Compile Include="Algorithms\561.cs" />
     <Compile Include="Algorithms\590.cs" />
@@ -64,6 +71,7 @@
     <Compile Include="Algorithms\728.cs" />
     <Compile Include="Algorithms\771.cs" />
     <Compile Include="Algorithms\811.cs" />
+    <Compile Include="Algorithms\821.cs" />
     <Compile Include="Algorithms\832.cs" />
     <Compile Include="Algorithms\876.cs" />
     <Compile Include="Algorithms\883.cs" />
