@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Leetcode.Algorithms
 {
-    public class _1108
-    {
-        public String DefangIPaddr(String address)
-        {
-            StringBuilder sb = new StringBuilder(address, 24);
+	public class _1108
+	{
+		public static string DefangIPaddr(string address)
+		{
+			var sb = new StringBuilder(address, 24);
 
-            sb.Replace(".", "[.]");
+			sb.Replace(".", "[.]");
 
-            return sb.ToString();
-        }
-    }
+			return sb.ToString();
+		}
+	}
 }
