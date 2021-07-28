@@ -9,7 +9,7 @@ namespace LeetCode
 		static void Main()
 		{
 			var json = JsonConvert.SerializeObject(
-				_1480.RunningSum(new int[] { 1, 2, 3, 4 })
+				_1945.GetLucky("zbax", 2)
 			);
 			Console.WriteLine(json);
 		}
