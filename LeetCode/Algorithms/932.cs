@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace LeetCode.Algorithms
 {
-	class _3829
+	class _932
 	{
 		public static int[] BeautifulArray(int n)
 		{

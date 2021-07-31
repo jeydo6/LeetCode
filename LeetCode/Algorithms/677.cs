@@ -5,17 +5,6 @@ namespace LeetCode.Algorithms
 {
 	class _677
 	{
-		public static string GetResult()
-		{
-			var mapSum = new MapSum();
-			mapSum.Insert("apple", 3);
-			mapSum.Sum("ap");
-			mapSum.Insert("app", 2);
-			mapSum.Sum("ap");
-
-			return "";
-		}
-
 		public class MapSum
 		{
 			private readonly IDictionary<string, int> _map;
