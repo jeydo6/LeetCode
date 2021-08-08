@@ -1,38 +1,36 @@
-using System;
 using System.Collections.Generic;
 
-public class _728
+namespace LeetCode.Algorithms
 {
-    public IList<Int32> SelfDividingNumbers(Int32 left, Int32 right)
-    {
-        IList<Int32> resultList = new List<Int32>();
+	// EASY
+	public class _728
+	{
+		public static IList<int> SelfDividingNumbers(int left, int right)
+		{
+			var result = new List<int>();
 
-        while (left <= right)
-        {
-            Boolean isSelfDivide = true;
-            Int32 number = left;
+			while (left <= right)
+			{
+				var number = left;
+				while (number > 0)
+				{
+					var r = number % 10;
+					if (r == 0 || left % r != 0)
+					{
+						break;
+					}
+					number /= 10;
+				}
 
-            while (number > 0)
-            {
-                Int32 divider = number % 10;
+				if (number == 0)
+				{
+					result.Add(left);
+				}
 
-                if (divider == 0 || left % divider != 0)
-                {
-                    isSelfDivide = false;
-                    break;
-                }
+				left++;
+			}
 
-                number /= 10;
-            }
-
-            if (isSelfDivide)
-            {
-                resultList.Add(left);
-            }
-
-            left++;
-        }
-
-        return resultList;
-    }
+			return result;
+		}
+	}
 }
