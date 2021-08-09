@@ -1,14 +1,34 @@
-using System;
-
-public class _905
+namespace LeetCode.Algorithms
 {
-    public Int32[] SortArrayByParity(Int32[] A)
-    {
-        Array.Sort(A, (m, n) =>
-        {
-            return m % 2 - n % 2;
-        });
+	public class _905
+	{
+		public static int[] SortArrayByParity(int[] numbers)
+		{
+			var result = new int[numbers.Length];
+			var i = 0;
+			var j = numbers.Length - 1;
+			foreach (var number in numbers)
+			{
+				if (number % 2 == 0)
+				{
+					result[i++] = number;
+				}
+				else
+				{
+					result[j--] = number;
+				}
+			}
+			return result;
+		}
 
-        return A;
-    }
+		//public static int[] SortArrayByParity(int[] numbers)
+		//{
+		//	Array.Sort(numbers, (m, n) =>
+		//	{
+		//		return m % 2 - n % 2;
+		//	});
+
+		//	return numbers;
+		//}
+	}
 }
