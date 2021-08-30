@@ -6,7 +6,7 @@
 		{
 			var lo = 0;
 			var hi = nums.Length - 1;
-			while (lo < hi)
+			while (lo <= hi)
 			{
 				var mid = lo + (hi - lo) / 2;
 				if (nums[mid] < target)
