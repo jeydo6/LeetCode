@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms
 {
 	class _3831
 	{
@@ -37,7 +35,7 @@ namespace LeetCode.Algorithms
 						{
 							result[i][j] = Math.Min(result[i][j], result[i][j - 1] + 1);
 						}
-							
+
 					}
 				}
 			}
@@ -53,7 +51,7 @@ namespace LeetCode.Algorithms
 					if (j < m - 1)
 					{
 						result[i][j] = Math.Min(result[i][j], result[i][j + 1] + 1);
-					}	
+					}
 				}
 			}
 
