@@ -1,4 +1,6 @@
-﻿namespace Leetcode.Algorithms
+﻿using System.Collections.Generic;
+
+namespace Leetcode.Algorithms
 {
 	public class _590
 	{

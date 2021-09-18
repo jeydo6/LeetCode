@@ -1,4 +1,7 @@
-﻿namespace LeetCode.Algorithms
+﻿using System;
+using System.Collections.Generic;
+
+namespace LeetCode.Algorithms
 {
 	// HARD
 	class _882

@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Algorithms
+﻿using System.Collections.Generic;
+
+namespace LeetCode.Algorithms
 {
 	class _78
 	{
