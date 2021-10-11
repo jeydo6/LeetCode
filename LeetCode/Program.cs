@@ -3,9 +3,9 @@ using System;
 
 namespace LeetCode
 {
-	class Program
+	internal static class Program
 	{
-		static void Main()
+		private static void Main()
 		{
 			var json = JsonConvert.SerializeObject(
 				""
