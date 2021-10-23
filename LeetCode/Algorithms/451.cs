@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace LeetCode.Algorithms
 {
-	// HARD
+	// MEDIUM
 	internal class _451
 	{
 		public static string FrequencySort(string s)
