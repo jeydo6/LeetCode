@@ -5,15 +5,11 @@ namespace LeetCode.Algorithms
 		public static int HammingDistance(int x, int y)
 		{
 			var result = 0;
-			while (x > 0 || y > 0)
+			var xor = x ^ y;
+			while (xor != 0)
 			{
-				if (x % 2 != y % 2)
-				{
-					result++;
-				}
-
-				x = x / 2;
-				y = y / 2;
+				result += xor & 1;
+				xor >>= 1;
 			}
 			return result;
 		}
