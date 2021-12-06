@@ -1,61 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Leetcode.Algorithms
 {
-	class _1
+	// EASY
+	internal class _1
 	{
-		//public Int32[] TwoSum(Int32[] nums, Int32 target)
-		//{
-		//    Int32[] result = new Int32[2];
-		//    for (Int32 i = 0; i < nums.Length - 1; i++)
-		//    {
-		//        for (Int32 j = i + 1; j < nums.Length; j++)
-		//        {
-		//            if (nums[i] + nums[j] == target)
-		//            {
-		//                result[0] = i;
-		//                result[1] = j;
-
-		//                break;
-		//            }
-		//        }
-		//    }
-
-		//    return result;
-		//}
-
-		public static int[] TwoSum(int[] numbers, int target)
+		public static int[] TwoSum(int[] nums, int target)
 		{
-			var half = -1;
-			if (target % 2 == 0)
-			{
-				half = target / 2;
-			}
-
+			var result = new int[2];
 			var dict = new Dictionary<int, int>();
-
-			for (var i = 0; i < numbers.Length; i++)
+			for (int i = 0; i < nums.Length; i++)
 			{
-				var element = numbers[i];
-				if (dict.ContainsKey(element) && element == half)
+				if (dict.ContainsKey(target - nums[i]))
 				{
-					return new int[] { dict[element], i };
+					result[1] = i;
+					result[0] = dict[target - nums[i]];
+					return result;
 				}
-
-				dict[numbers[i]] = i;
+				dict[nums[i]] = i;
 			}
-
-			for (var i = 0; i < numbers.Length; i++)
-			{
-				var complement = target - numbers[i];
-				if (dict.ContainsKey(complement) && dict[complement] != i)
-				{
-					return new int[] { i, dict[complement] };
-				}
-			}
-
-			throw new Exception("No two sum solution");
+			return result;
 		}
 	}
 }
