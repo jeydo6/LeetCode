@@ -50,18 +50,5 @@ namespace Leetcode.Algorithms
 
 			return result;
 		}
-
-		//private int sum = 0;
-		//public int RangeSumBST(TreeNode root, int L, int R)
-		//{
-		//    if (root != null)
-		//    {
-		//        RangeSumBST(root.left, L, R);
-		//        sum += (root.val >= L && root.val <= R ? root.val : 0);
-		//        RangeSumBST(root.right, L, R);
-		//    }
-
-		//    return sum;
-		//}
 	}
 }
