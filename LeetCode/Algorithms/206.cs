@@ -1,8 +1,8 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _206
+	// EASY
+	internal class _206
 	{
-
 		public class ListNode
 		{
 			public int val;
