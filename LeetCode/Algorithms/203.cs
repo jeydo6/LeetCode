@@ -20,9 +20,7 @@
 			{
 				return null;
 			}
-
 			head.next = RemoveElements(head.next, val);
-
 			return head.val == val ? head.next : head;
 		}
 	}
