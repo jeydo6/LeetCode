@@ -22,15 +22,15 @@ namespace LeetCode.Algorithms
 		{
 			var list = new List<int>();
 			var stack = new Stack<TreeNode>();
-			while (node != null)
+			while (node != null || stack.Count > 0)
 			{
-				list.Add(node.val);
-				if (node.right != null)
+				if (node != null)
 				{
+					list.Add(node.val);
 					stack.Push(node.right);
+					node = node.left;
 				}
-				node = node.left;
-				if (node == null && stack.Count > 0)
+				else
 				{
 					node = stack.Pop();
 				}
