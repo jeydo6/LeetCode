@@ -2,6 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
+	// EASY
 	public class _104
 	{
 		public class TreeNode
@@ -19,50 +20,6 @@ namespace Leetcode.Algorithms
 
 			public TreeNode right;
 		}
-
-		//public Int32 MaxDepth(TreeNode root)
-		//      {
-		//          if (root == null)
-		//          {
-		//              return 0;
-		//          }
-
-		//          Int32 depth = 0;
-		//          Stack<TreeNode> nodes = new Stack<TreeNode>();
-		//          Stack<TreeNode> path = new Stack<TreeNode>();
-
-		//          TreeNode node = root;
-		//          nodes.Push(node);
-
-		//          while (nodes.Count > 0)
-		//          {
-		//              node = nodes.Peek();
-		//              if (path.Count > 0 && node == path.Peek())
-		//              {
-		//                  if (path.Count > depth)
-		//                  {
-		//                      depth = path.Count;
-		//                  }
-
-		//                  path.Pop();
-		//                  nodes.Pop();
-		//              }
-		//              else
-		//              {
-		//                  path.Push(node);
-		//                  if (node.left != null)
-		//                  {
-		//                      nodes.Push(node.left);
-		//                  }
-		//                  if (node.right != null)
-		//                  {
-		//                      nodes.Push(node.right);
-		//                  }
-		//              }
-		//          }
-
-		//          return depth;
-		//      }
 
 		public static int MaxDepth(TreeNode root)
 		{
