@@ -1,70 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Leetcode.Algorithms
 {
-    public class _682
-    {
-        public Int32 CalPoints(String[] ops)
-        {
-            Stack<Int32> points = new Stack<Int32>();
-            points.Push(0);
-            points.Push(0);
+	// EASY
+	internal class _682
+	{
+		public static int CalPoints(string[] ops)
+		{
+			var points = new Stack<int>();
+			points.Push(0);
+			points.Push(0);
 
-            foreach (String op in ops)
-            {
-                switch(op)
-                {
-                    case "+":
-                        {
-                            Int32 value1 = points.Pop();
-                            Int32 value2 = points.Pop();
-                            Int32 value = value1 + value2;
+			foreach (var op in ops)
+			{
+				switch (op)
+				{
+					case "+":
+						{
+							var value1 = points.Pop();
+							var value2 = points.Pop();
+							var value = value1 + value2;
 
-                            points.Push(value2);
-                            points.Push(value1);
-                            points.Push(value);
+							points.Push(value2);
+							points.Push(value1);
+							points.Push(value);
 
-                            break;
-                        }
-                    case "D":
-                        {
-                            Int32 value1 = points.Pop();
-                            Int32 value = value1 * 2;
+							break;
+						}
+					case "D":
+						{
+							var value1 = points.Pop();
+							var value = value1 * 2;
 
-                            points.Push(value1);
-                            points.Push(value);
+							points.Push(value1);
+							points.Push(value);
 
-                            break;
-                        }
-                    case "C":
-                        {
-                            Int32 value1 = points.Pop();
+							break;
+						}
+					case "C":
+						{
+							points.Pop();
 
-                            break;
-                        }
-                    default:
-                        {
-                            if (Int32.TryParse(op, out Int32 value))
-                            {
-                                points.Push(value);
-                            }
+							break;
+						}
+					default:
+						{
+							if (int.TryParse(op, out var value))
+							{
+								points.Push(value);
+							}
 
-                            break;
-                        }
-                }
-            }
+							break;
+						}
+				}
+			}
 
-            Int32 sum = 0;
-            while (points.Count > 0)
-            {
-                sum += points.Pop();
-            }
-
-            return sum;
-        }
-    }
+			var sum = 0;
+			while (points.Count > 0)
+			{
+				sum += points.Pop();
+			}
+			return sum;
+		}
+	}
 }
