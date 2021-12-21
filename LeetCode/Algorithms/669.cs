@@ -1,70 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _669
-    {
-        public class TreeNode
-        {
-            public TreeNode(Int32 x)
-            {
-                val = x;
-            }
+	public class _669
+	{
+		public class TreeNode
+		{
+			public TreeNode(int val)
+			{
+				this.val = val;
+			}
 
-            public Int32 val;
+			public int val;
 
-            public TreeNode left;
+			public TreeNode left;
 
-            public TreeNode right;
-        }
+			public TreeNode right;
+		}
 
-        public TreeNode TrimBST(TreeNode root, Int32 L, Int32 R)
-        {
-            if (root == null)
-            {
-                return null;
-            }
+		public static TreeNode TrimBST(TreeNode root, int l, int r)
+		{
+			if (root == null)
+			{
+				return null;
+			}
 
-            while (root.val < L || root.val > R)
-            {
-                if (root.val < L)
-                {
-                    root = root.right;
-                }
+			while (root.val < l || root.val > r)
+			{
+				if (root.val < l)
+				{
+					root = root.right;
+				}
 
-                if (root.val > R)
-                {
-                    root = root.left;
-                }
-            }
+				if (root.val > r)
+				{
+					root = root.left;
+				}
+			}
 
-            TreeNode temp;
+			var temp = root;
+			while (temp != null)
+			{
+				while (temp.left != null && temp.left.val < l)
+				{
+					temp.left = temp.left.right;
+				}
+				temp = temp.left;
+			}
 
-            temp = root;
-            while (temp != null)
-            {
-                while (temp.left != null && temp.left.val < L)
-                {
-                    temp.left = temp.left.right;
-                }
-                temp = temp.left;
-            }
+			temp = root;
+			while (temp != null)
+			{
+				while (temp.right != null && temp.right.val > r)
+				{
+					temp.right = temp.right.left;
+				}
+				temp = temp.right;
+			}
 
-            temp = root;
-            while (temp != null)
-            {
-                while (temp.right != null && temp.right.val > R)
-                {
-                    temp.right = temp.right.left;
-                }
-                temp = temp.right;
-            }
-
-            return root;
-        }
-    }
+			return root;
+		}
+	}
 }
