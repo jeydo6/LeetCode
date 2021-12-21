@@ -1,6 +1,6 @@
 namespace Leetcode.Algorithms
 {
-	public class _883
+	internal class _883
 	{
 		public static int ProjectionArea(int[][] grid)
 		{
