@@ -1,47 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _985
-    {
-        public Int32[] SumEvenAfterQueries(Int32[] A, Int32[][] queries)
-        {
-            Int32[] result = new Int32[queries.Length];
+	// EASY
+	internal class _985
+	{
+		public static int[] SumEvenAfterQueries(int[] arr, int[][] queries)
+		{
+			var result = new int[queries.Length];
 
-            Int32 sum = 0;
-            foreach (Int32 a in A)
-            {
-                if (a % 2 == 0)
-                {
-                    sum += a;
-                }
-            }
+			var sum = 0;
+			foreach (var a in arr)
+			{
+				if (a % 2 == 0)
+				{
+					sum += a;
+				}
+			}
 
-            for (Int32 i = 0; i < queries.Length; i++)
-            {
-                Int32 index = queries[i][1];
-                Int32 val = queries[i][0];
+			for (var i = 0; i < queries.Length; i++)
+			{
+				var index = queries[i][1];
+				var val = queries[i][0];
 
-                if (A[index] % 2 == 0)
-                {
-                    sum -= A[index];
-                }
+				if (arr[index] % 2 == 0)
+				{
+					sum -= arr[index];
+				}
 
-                A[index] += val;
+				arr[index] += val;
 
-                if (A[index] % 2 == 0)
-                {
-                    sum += A[index];
-                }
+				if (arr[index] % 2 == 0)
+				{
+					sum += arr[index];
+				}
 
-                result[i] = sum;
-            }
-
-            return result;
-        }
-    }
+				result[i] = sum;
+			}
+			return result;
+		}
+	}
 }
