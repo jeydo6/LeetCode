@@ -2,7 +2,7 @@
 
 namespace LeetCode.Algorithms
 {
-	public class _155
+	internal class _155
 	{
 		public void GetResult()
 		{
