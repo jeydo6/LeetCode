@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms
 {
 	// EASY
-	public class _728
+	internal class _728
 	{
 		public static IList<int> SelfDividingNumbers(int left, int right)
 		{
