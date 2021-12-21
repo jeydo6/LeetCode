@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _933
+	internal class _933
 	{
 		public class RecentCounter
 		{
