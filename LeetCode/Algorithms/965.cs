@@ -1,29 +1,27 @@
-﻿using System;
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _965
-    {
-        public class TreeNode
-        {
-            public TreeNode(Int32 x)
-            {
-                val = x;
-            }
+	// EASY
+	internal class _965
+	{
+		public class TreeNode
+		{
+			public TreeNode(int val)
+			{
+				this.val = val;
+			}
 
-            public Int32 val;
-            public TreeNode left;
-            public TreeNode right;
-        }
+			public int val;
+			public TreeNode left;
+			public TreeNode right;
+		}
 
-        public Boolean IsUnivalTree(TreeNode root)
-        {
-            Boolean leftCorrect = (root.left == null
-                || (root.val == root.left.val && IsUnivalTree(root.left)));
+		public static bool IsUnivalTree(TreeNode root)
+		{
+			var leftCorrect = root.left == null || (root.val == root.left.val && IsUnivalTree(root.left));
 
-            Boolean rightCorrect = (root.right == null
-                || (root.val == root.right.val && IsUnivalTree(root.right)));
+			var rightCorrect = root.right == null || (root.val == root.right.val && IsUnivalTree(root.right));
 
-            return leftCorrect && rightCorrect;
-        }
-    }
+			return leftCorrect && rightCorrect;
+		}
+	}
 }
