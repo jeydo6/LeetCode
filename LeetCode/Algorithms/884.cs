@@ -1,58 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-//using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Leetcode.Algorithms
 {
-    public class _884
-    {
-        public String[] UncommonFromSentences(String A, String B)
-        {
-            Dictionary<String, Int32> dict = new Dictionary<String, Int32>();
+	// EASY
+	internal class _884
+	{
+		public static string[] UncommonFromSentences(string a, string b)
+		{
+			var dict = new Dictionary<string, int>();
 
-            String[] aWords = A.Split(' ');
-            String[] bWords = B.Split(' ');
+			foreach (var word in a.Split(' '))
+			{
+				if (!dict.ContainsKey(word))
+				{
+					dict[word] = 1;
+				}
+				else
+				{
+					dict[word] = ++dict[word];
+				}
+			}
 
-            foreach (String word in aWords)
-            {
-                if (!dict.ContainsKey(word))
-                {
-                    dict[word] = 1;
-                }
-                else
-                {
-                    dict[word] = ++dict[word];
-                }
-            }
+			foreach (string word in b.Split(' '))
+			{
+				if (!dict.ContainsKey(word))
+				{
+					dict[word] = 1;
+				}
+				else
+				{
+					dict[word] = ++dict[word];
+				}
+			}
 
-            foreach (String word in bWords)
-            {
-                if (!dict.ContainsKey(word))
-                {
-                    dict[word] = 1;
-                }
-                else
-                {
-                    dict[word] = ++dict[word];
-                }
-            }
+			var result = new List<string>();
 
-            ICollection<String> resultCollection = new List<String>();
+			foreach (var keyValue in dict)
+			{
+				if (keyValue.Value == 1)
+				{
+					result.Add(keyValue.Key);
+				}
+			}
 
-            foreach (KeyValuePair<String, Int32> keyValue in dict)
-            {
-                if (keyValue.Value == 1)
-                {
-                    resultCollection.Add(keyValue.Key);
-                }
-            }
-
-            String[] arr = new String[resultCollection.Count];
-            resultCollection.CopyTo(arr, 0);
-
-            return arr;
-        }
-    }
+			return result.ToArray();
+		}
+	}
 }
