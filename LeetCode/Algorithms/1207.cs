@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _1207
+	internal class _1207
 	{
 		public static bool UniqueOccurrences(int[] arr)
 		{
