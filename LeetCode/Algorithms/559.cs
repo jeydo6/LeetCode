@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace Leetcode.Algorithms
 {
-	public class _559
+	// EASY
+	internal class _559
 	{
 		public class Node
 		{
@@ -21,7 +22,7 @@ namespace Leetcode.Algorithms
 			}
 		}
 
-		public int MaxDepth(Node root)
+		public static int MaxDepth(Node root)
 		{
 			if (root == null)
 			{
