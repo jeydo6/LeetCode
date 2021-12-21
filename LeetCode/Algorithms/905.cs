@@ -1,6 +1,6 @@
 namespace LeetCode.Algorithms
 {
-	public class _905
+	internal class _905
 	{
 		public static int[] SortArrayByParity(int[] numbers)
 		{
