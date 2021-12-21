@@ -1,6 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
-	public class _463
+	internal class _463
 	{
 		public static int IslandPerimeter(int[][] grid)
 		{
