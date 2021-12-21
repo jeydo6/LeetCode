@@ -1,6 +1,6 @@
 namespace LeetCode.Algorithms
 {
-	public class _657
+	internal class _657
 	{
 		public static bool JudgeCircle(string moves)
 		{
