@@ -1,6 +1,7 @@
 ﻿namespace Leetcode.Algorithms
 {
-	public class _669
+	// EASY
+	internal class _669
 	{
 		public class TreeNode
 		{
