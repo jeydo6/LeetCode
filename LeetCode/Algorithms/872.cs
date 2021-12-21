@@ -1,79 +1,75 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Leetcode.Algorithms
 {
-    public class _872
-    {
-        public class TreeNode
-        {
-            public TreeNode(Int32 x)
-            {
-                val = x;
-            }
+	// EASY
+	internal class _872
+	{
+		public class TreeNode
+		{
+			public TreeNode(int val)
+			{
+				this.val = val;
+			}
 
-            public Int32 val;
+			public int val;
 
-            public TreeNode left;
+			public TreeNode left;
 
-            public TreeNode right;
-        }
+			public TreeNode right;
+		}
 
-        public Boolean LeafSimilar(TreeNode root1, TreeNode root2)
-        {
-            TreeNode[] nodes1 = GetLeaves(root1);
-            TreeNode[] nodes2 = GetLeaves(root2);
+		public static bool LeafSimilar(TreeNode root1, TreeNode root2)
+		{
+			var nodes1 = GetLeaves(root1);
+			var nodes2 = GetLeaves(root2);
 
-            if (nodes1.Length != nodes2.Length)
-            {
-                return false;
-            }
+			if (nodes1.Length != nodes2.Length)
+			{
+				return false;
+			}
 
-            for (Int32 i = 0; i < nodes1.Length; i++)
-            {
-                if (nodes1[i].val != nodes2[i].val)
-                {
-                    return false;
-                }
-            }
+			for (var i = 0; i < nodes1.Length; i++)
+			{
+				if (nodes1[i].val != nodes2[i].val)
+				{
+					return false;
+				}
+			}
 
-            return true;
-        }
+			return true;
+		}
 
-        private TreeNode[] GetLeaves(TreeNode root)
-        {
-            ICollection<TreeNode> resultCollection = new List<TreeNode>();
+		private static TreeNode[] GetLeaves(TreeNode root)
+		{
+			var result = new List<TreeNode>();
 
-            Stack<TreeNode> stack = new Stack<TreeNode>();
-            stack.Push(root);
+			var stack = new Stack<TreeNode>();
+			stack.Push(root);
 
-            while(stack.Count > 0)
-            {
-                TreeNode node = stack.Pop();
-                
-                if (node.left != null || node.right != null)
-                {
-                    if (node.right != null)
-                    {
-                        stack.Push(node.right);
-                    }
+			while (stack.Count > 0)
+			{
+				var node = stack.Pop();
 
-                    if (node.left != null)
-                    {
-                        stack.Push(node.left);
-                    }
-                }
-                else
-                {
-                    resultCollection.Add(node);
-                }
-            }
+				if (node.left != null || node.right != null)
+				{
+					if (node.right != null)
+					{
+						stack.Push(node.right);
+					}
 
-            TreeNode[] resultArray = new TreeNode[resultCollection.Count];
+					if (node.left != null)
+					{
+						stack.Push(node.left);
+					}
+				}
+				else
+				{
+					result.Add(node);
+				}
+			}
 
-            resultCollection.CopyTo(resultArray, 0);
-
-            return resultArray;
-        }
-    }
+			return result.ToArray();
+		}
+	}
 }
