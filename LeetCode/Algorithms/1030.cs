@@ -1,34 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Leetcode.Algorithms
 {
-    public class _1030
-    {
-        public Int32[][] AllCellsDistOrder(Int32 R, Int32 C, Int32 r0, Int32 c0)
-        {
-            Int32[][] result = new Int32[R * C][];
+	internal class _1030
+	{
+		public static int[][] AllCellsDistOrder(int r, int c, int r0, int c0)
+		{
+			var result = new int[r * c][];
+			for (var i = 0; i < r; i++)
+			{
+				for (var j = 0; j < c; j++)
+				{
+					result[i * c + j] = new int[2] { i, j };
+				}
+			}
 
-            for (Int32 i = 0; i < R; i++)
-            {
-                for (Int32 j = 0; j < C; j++)
-                {
-                    result[i * C + j] = new Int32[2] { i, j };
-                }
-            }
+			Array.Sort(result, (a, b) =>
+			{
+				var d1 = Math.Abs(a[0] - r0) + Math.Abs(a[1] - c0);
+				var d2 = Math.Abs(b[0] - r0) + Math.Abs(b[1] - c0);
 
-            Array.Sort(result, (a, b) =>
-            {
-                Int32 d1 = Math.Abs(a[0] - r0) + Math.Abs(a[1] - c0);
-                Int32 d2 = Math.Abs(b[0] - r0) + Math.Abs(b[1] - c0);
+				return d1 - d2;
+			});
 
-                return d1 - d2;
-            });
-
-            return result;
-        }
-    }
+			return result;
+		}
+	}
 }
