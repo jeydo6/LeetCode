@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Leetcode.Algorithms
 {
-	public class _1200
+	internal class _1200
 	{
 		public static IList<IList<int>> MinimumAbsDifference(int[] arr)
 		{
