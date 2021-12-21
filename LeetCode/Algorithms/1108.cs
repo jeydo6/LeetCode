@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _1108
+	internal class _1108
 	{
 		public static string DefangIPaddr(string address)
 		{
