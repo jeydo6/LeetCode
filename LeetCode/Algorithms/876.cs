@@ -1,6 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
-	public class _876
+	internal class _876
 	{
 		public class ListNode
 		{
