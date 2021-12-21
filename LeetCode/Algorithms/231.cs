@@ -1,6 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _231
+	// EASY
+	internal static class _231
 	{
 		public static bool IsPowerOfTwo(int n)
 		{
