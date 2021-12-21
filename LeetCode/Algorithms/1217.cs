@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _1217
+	internal class _1217
 	{
 		public static int MinCostToMoveChips(int[] chips)
 		{
