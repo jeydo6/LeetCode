@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _590
+	internal class _590
 	{
 		public class Node
 		{
