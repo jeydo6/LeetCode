@@ -1,6 +1,6 @@
 namespace LeetCode.Algorithms
 {
-	public class _617
+	internal class _617
 	{
 		public class TreeNode
 		{
