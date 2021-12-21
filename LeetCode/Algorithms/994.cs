@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	public class _994
+	internal class _994
 	{
 		public static int OrangesRotting(int[][] grid)
 		{
