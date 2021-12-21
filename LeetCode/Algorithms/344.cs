@@ -1,6 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
-	public class _344
+	internal class _344
 	{
 		public void ReverseString(char[] s)
 		{
