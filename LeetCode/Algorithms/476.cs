@@ -2,6 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
+	// EASY
 	internal class _476
 	{
 		public static int FindComplement(int num)
