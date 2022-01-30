@@ -1,6 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _189
+	// MEDIUM
+	internal class _189
 	{
 		public static void Rotate(int[] nums, int k)
 		{
