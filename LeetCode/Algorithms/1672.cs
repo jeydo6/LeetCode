@@ -1,19 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetCode.Algorithms
 {
-	class _1672
+	// EASY
+	internal class _1672
 	{
 		public static int MaximumWealth(int[][] accounts)
 		{
-			return accounts
-				.Select(a => a.Sum())
-				.OrderByDescending(s => s)
-				.First();
+			var result = 0;
+			for (var i = 0; i < accounts.Length; i++)
+			{
+				var temp = 0;
+				for (var j = 0; j < accounts[i].Length; j++)
+				{
+					temp += accounts[i][j];
+				}
+				result = Math.Max(result, temp);
+			}
+			return result;
 		}
 	}
 }
