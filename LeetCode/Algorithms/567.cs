@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	class _567
+	internal class _567
 	{
 		public static bool CheckInclusion(string s1, string s2)
 		{
