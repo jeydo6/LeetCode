@@ -3,6 +3,7 @@
 namespace LeetCode.Algorithms
 {
 	// EASY
+	// 2022-03-13
 	internal class _20
 	{
 		public static bool IsValid(string s)
