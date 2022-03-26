@@ -1,6 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _704
+	// EASY
+	internal class _704
 	{
 		public static int Search(int[] nums, int target)
 		{
