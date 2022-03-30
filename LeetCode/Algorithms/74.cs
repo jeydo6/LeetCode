@@ -7,21 +7,22 @@
 		{
 			var n = matrix.Length;
 			var m = matrix[0].Length;
-			var l = 0;
-			var r = m * n - 1;
-			while (l != r)
+
+			var lo = 0;
+			var hi = m * n - 1;
+			while (lo != hi)
 			{
-				var mid = (l + r - 1) >> 1;
+				var mid = lo + (hi - lo) / 2;
 				if (matrix[mid / m][mid % m] < target)
 				{
-					l = mid + 1;
+					lo = mid + 1;
 				}
 				else
 				{
-					r = mid;
+					hi = mid;
 				}
 			}
-			return matrix[r / m][r % m] == target;
+			return matrix[hi / m][hi % m] == target;
 		}
 	}
 }
