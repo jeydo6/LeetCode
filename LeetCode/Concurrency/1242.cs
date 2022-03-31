@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace LeetCode.Concurrency
@@ -58,8 +56,8 @@ namespace LeetCode.Concurrency
 
 			public List<string> GetUrls(string url)
 			{
-				var random = new Random();
-				Thread.Sleep(random.Next(16));
+				var random = new System.Random();
+				System.Threading.Thread.Sleep(random.Next(16));
 
 				return _graph.ContainsKey(url) ? _graph[url] : new List<string>();
 			}
