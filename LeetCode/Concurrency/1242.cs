@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,25 +13,25 @@ namespace LeetCode.Concurrency
 		{
 			var slashIndex = startUrl.IndexOf('/', 7);
 			var host = slashIndex > 0 ? startUrl[..slashIndex] : startUrl;
-			var visited = new HashSet<string>
+			var visited = new ConcurrentDictionary<string, string>
 			{
-				startUrl
+				[startUrl] = startUrl
 			};
 
 			Crawl(startUrl, htmlParser, host, visited);
 
-			return new List<string>(visited);
+			return new List<string>(visited.Keys);
 		}
 
-		public static void Crawl(string startUrl, HtmlParser htmlParser, string host, ISet<string> visited)
+		public static void Crawl(string startUrl, HtmlParser htmlParser, string host, ConcurrentDictionary<string, string> visited)
 		{
 			Parallel.ForEach(htmlParser.GetUrls(startUrl), url =>
 			{
-				if (url.StartsWith(host) && !visited.Contains(url))
+				if (url.StartsWith(host) && !visited.ContainsKey(url))
 				{
 					lock (visited)
 					{
-						visited.Add(url);
+						visited.TryAdd(url, url);
 					}
 					Crawl(url, htmlParser, host, visited);
 				}
