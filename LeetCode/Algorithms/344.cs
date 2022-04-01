@@ -1,15 +1,15 @@
 ﻿namespace Leetcode.Algorithms
 {
+	// EASY
 	internal class _344
 	{
-		public void ReverseString(char[] s)
+		public static void ReverseString(char[] s)
 		{
-			var length = s.Length / 2;
-			for (var i = 0; i < length; i++)
+			var lo = 0;
+			var hi = s.Length - 1;
+			while (lo < hi)
 			{
-				var temp = s[i];
-				s[i] = s[^(i + 1)];
-				s[^(i + 1)] = temp;
+				(s[lo], s[hi]) = (s[hi--], s[lo++]);
 			}
 		}
 	}
