@@ -2,6 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
+	// EASY
 	internal class _938
 	{
 		public class TreeNode
@@ -9,6 +10,13 @@ namespace Leetcode.Algorithms
 			public TreeNode(int value)
 			{
 				val = value;
+			}
+
+			public TreeNode(int value, TreeNode left, TreeNode right)
+			{
+				val = value;
+				this.left = left;
+				this.right = right;
 			}
 
 			public int val;
@@ -21,14 +29,14 @@ namespace Leetcode.Algorithms
 
 		public static int RangeSumBST(TreeNode root, int low, int high)
 		{
-			int result = 0;
+			var result = 0;
 
-			Stack<TreeNode> stack = new Stack<TreeNode>();
+			var stack = new Stack<TreeNode>();
 			stack.Push(root);
 
 			while (stack.Count > 0)
 			{
-				TreeNode node = stack.Pop();
+				var node = stack.Pop();
 				if (node != null)
 				{
 					if (node.val >= low && node.val <= high)
