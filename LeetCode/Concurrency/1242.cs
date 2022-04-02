@@ -27,10 +27,7 @@ namespace LeetCode.Concurrency
 			{
 				if (url.StartsWith(host) && !visited.ContainsKey(url))
 				{
-					lock (visited)
-					{
-						visited.TryAdd(url, url);
-					}
+					visited.TryAdd(url, url);
 					Crawl(url, htmlParser, host, visited);
 				}
 			});
