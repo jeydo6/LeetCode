@@ -4,30 +4,26 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	class _3
+	internal class _3
 	{
 		public static int LengthOfLongestSubstring(string s)
 		{
-			if (string.IsNullOrEmpty(s))
-			{
-				return 0;
-			}
+			var result = 0;
 
+			var i = 0;
 			var dict = new Dictionary<char, int>();
-
-			var j = 0;
-			var max = 0;
-			for (var i = 0; i < s.Length; i++)
+			for (var j = 0; j < s.Length; j++)
 			{
-				if (dict.ContainsKey(s[i]))
+				if (dict.ContainsKey(s[j]))
 				{
-					j = Math.Max(j, dict[s[i]] + 1);
+					i = Math.Max(i, dict[s[j]] + 1);
 				}
 
-				dict[s[i]] = i;
-				max = Math.Max(max, i - j + 1);
+				result = Math.Max(result, j - i + 1);
+				dict[s[j]] = j;
 			}
-			return max;
+
+			return result;
 		}
 	}
 }
