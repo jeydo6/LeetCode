@@ -10,22 +10,22 @@ namespace LeetCode.Algorithms
 			var result = 0;
 
 			var sum = 0;
-			var preSum = new Dictionary<int, int>
+			var dict = new Dictionary<int, int>
 			{
 				[0] = 1
 			};
 			for (var i = 0; i < nums.Length; i++)
 			{
 				sum += nums[i];
-				if (preSum.ContainsKey(sum - k))
+				if (dict.ContainsKey(sum - k))
 				{
-					result += preSum[sum - k];
+					result += dict[sum - k];
 				}
-				if (!preSum.ContainsKey(sum))
+				if (!dict.ContainsKey(sum))
 				{
-					preSum[sum] = 0;
+					dict[sum] = 0;
 				}
-				preSum[sum]++;
+				dict[sum]++;
 			}
 
 			return result;
