@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace LeetCode.Concurrency
@@ -16,21 +17,37 @@ namespace LeetCode.Concurrency
 				[startUrl] = startUrl
 			};
 
-			Crawl(startUrl, htmlParser, host, visited);
+			CrawlParallel(startUrl, htmlParser, host, visited);
 
 			return new List<string>(visited.Keys);
 		}
 
-		public static void Crawl(string startUrl, HtmlParser htmlParser, string host, ConcurrentDictionary<string, string> visited)
+		public static void CrawlParallel(string startUrl, HtmlParser htmlParser, string host, ConcurrentDictionary<string, string> visited)
 		{
 			Parallel.ForEach(htmlParser.GetUrls(startUrl), url =>
 			{
 				if (url.StartsWith(host) && !visited.ContainsKey(url))
 				{
 					visited.TryAdd(url, url);
-					Crawl(url, htmlParser, host, visited);
+					CrawlParallel(url, htmlParser, host, visited);
 				}
 			});
+		}
+
+		public static void CrawlTasks(string startUrl, HtmlParser htmlParser, string host, ConcurrentDictionary<string, string> visited)
+		{
+			var tasks = htmlParser
+				.GetUrls(startUrl)
+				.Select(url => Task.Run(() =>
+				{
+					if (url.StartsWith(host) && !visited.ContainsKey(url))
+					{
+						visited.TryAdd(url, url);
+						CrawlTasks(url, htmlParser, host, visited);
+					}
+				}))
+				.ToArray();
+			Task.WaitAll(tasks);
 		}
 
 		public class HtmlParser
