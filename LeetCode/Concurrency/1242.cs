@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LeetCode.Concurrency
@@ -38,14 +39,19 @@ namespace LeetCode.Concurrency
 		{
 			var tasks = htmlParser
 				.GetUrls(startUrl)
-				.Select(url => Task.Run(() =>
-				{
-					if (url.StartsWith(host) && !visited.ContainsKey(url))
+				.Select(url => Task.Factory.StartNew(
+					() =>
 					{
-						visited.TryAdd(url, url);
-						CrawlTasks(url, htmlParser, host, visited);
-					}
-				}))
+						if (url.StartsWith(host) && !visited.ContainsKey(url))
+						{
+							visited.TryAdd(url, url);
+							CrawlTasks(url, htmlParser, host, visited);
+						}
+					},
+					CancellationToken.None,
+					TaskCreationOptions.AttachedToParent,
+					TaskScheduler.Default)
+				)
 				.ToArray();
 			Task.WaitAll(tasks);
 		}
