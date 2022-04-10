@@ -8,21 +8,19 @@ namespace LeetCode.Algorithms
 		public static int MaxProduct(int[] nums)
 		{
 			var result = nums[0];
-			var iMax = result;
-			var iMin = result;
+			var max = result;
+			var min = result;
 			for (var i = 1; i < nums.Length; i++)
 			{
 				if (nums[i] < 0)
 				{
-					var temp = iMax;
-					iMax = iMin;
-					iMin = temp;
+					(min, max) = (max, min);
 				}
 
-				iMax = Math.Max(nums[i], iMax * nums[i]);
-				iMin = Math.Min(nums[i], iMin * nums[i]);
+				max = Math.Max(nums[i], max * nums[i]);
+				min = Math.Min(nums[i], min * nums[i]);
 
-				result = Math.Max(result, iMax);
+				result = Math.Max(result, max);
 			}
 			return result;
 		}
