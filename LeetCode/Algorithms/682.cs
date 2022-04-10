@@ -16,42 +16,21 @@ namespace Leetcode.Algorithms
 				switch (op)
 				{
 					case "+":
-						{
-							var value1 = points.Pop();
-							var value2 = points.Pop();
-							var value = value1 + value2;
+						var top = points.Pop();
+						var newTop = top + points.Peek();
 
-							points.Push(value2);
-							points.Push(value1);
-							points.Push(value);
-
-							break;
-						}
+						points.Push(top);
+						points.Push(newTop);
+						break;
 					case "D":
-						{
-							var value1 = points.Pop();
-							var value = value1 * 2;
-
-							points.Push(value1);
-							points.Push(value);
-
-							break;
-						}
+						points.Push(2 * points.Peek());
+						break;
 					case "C":
-						{
-							points.Pop();
-
-							break;
-						}
+						points.Pop();
+						break;
 					default:
-						{
-							if (int.TryParse(op, out var value))
-							{
-								points.Push(value);
-							}
-
-							break;
-						}
+						points.Push(int.Parse(op));
+						break;
 				}
 			}
 
