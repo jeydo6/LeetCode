@@ -1,5 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
+	// EASY
 	internal class _700
 	{
 		public class TreeNode
