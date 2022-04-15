@@ -1,17 +1,16 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _1929
+	// EASY
+	internal class _1929
 	{
-		public static int[] GetConcatenation(int[] numbers)
+		public static int[] GetConcatenation(int[] nums)
 		{
-			var result = new int[2 * numbers.Length];
-
-			for (var i = 0; i < numbers.Length; i++)
+			var result = new int[2 * nums.Length];
+			for (var i = 0; i < nums.Length; i++)
 			{
-				result[i] = numbers[i];
-				result[i + numbers.Length] = numbers[i];
+				result[i] = nums[i];
+				result[i + nums.Length] = nums[i];
 			}
-
 			return result;
 		}
 	}
