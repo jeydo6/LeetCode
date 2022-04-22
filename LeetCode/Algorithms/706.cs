@@ -102,5 +102,6 @@ namespace LeetCode.Algorithms
 				return key % _buckets.Length;
 			}
 		}
+
 	}
 }
