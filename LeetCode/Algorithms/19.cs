@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	class _19
+	internal class _19
 	{
 		public class ListNode
 		{
