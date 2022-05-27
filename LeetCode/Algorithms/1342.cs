@@ -1,19 +1,20 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _1342
+	// EASY
+	internal class _1342
 	{
-		public static int NumberOfSteps(int number)
+		public static int NumberOfSteps(int num)
 		{
 			var result = 0;
-			while (number > 0)
+			while (num > 0)
 			{
-				if (number % 2 == 0)
+				if (num % 2 == 0)
 				{
-					number /= 2;
+					num /= 2;
 				}
 				else
 				{
-					number -= 1;
+					num -= 1;
 				}
 				result++;
 			}
