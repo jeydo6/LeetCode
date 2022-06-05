@@ -22,7 +22,6 @@ namespace LeetCode.Algorithms
 
 		private static IList<IList<string>> Backtrack(int row, int n, ISet<int> diagonals, ISet<int> antiDiagonals, ISet<int> columns, char[][] board)
 		{
-			var solutions = new List<IList<string>>();
 			if (row == n)
 			{
 				var solution = new List<string>();
@@ -31,10 +30,13 @@ namespace LeetCode.Algorithms
 					var currentRow = new string(board[r]);
 					solution.Add(currentRow);
 				}
-				solutions.Add(solution);
-				return solutions;
+				return new List<IList<string>>
+				{
+					solution
+				};
 			}
 
+			var solutions = new List<IList<string>>();
 			for (var c = 0; c < n; c++)
 			{
 				var currentDiagonal = row - c;
