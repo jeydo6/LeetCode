@@ -1,14 +1,15 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _167
+	// MEDIUM
+	internal class _167
 	{
-		public static int[] TwoSum(int[] nums, int target)
+		public static int[] TwoSum(int[] numbers, int target)
 		{
 			var lo = 0;
-			var hi = nums.Length - 1;
+			var hi = numbers.Length - 1;
 			while (lo < hi)
 			{
-				var sum = nums[lo] + nums[hi];
+				var sum = numbers[lo] + numbers[hi];
 				if (sum < target)
 				{
 					lo++;
@@ -22,7 +23,7 @@
 					return new int[2] { lo + 1, hi + 1 };
 				}
 			}
-			return null;
+			return new int[] { -1, -1 };
 		}
 	}
 }
