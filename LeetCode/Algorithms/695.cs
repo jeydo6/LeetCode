@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	class _695
+	internal class _695
 	{
 		public static int MaxAreaOfIsland(int[][] grid)
 		{
