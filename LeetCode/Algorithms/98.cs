@@ -24,8 +24,9 @@ namespace LeetCode.Algorithms
 			{
 				return true;
 			}
+			
+			TreeNode prev = null;
 			var stack = new Stack<TreeNode>();
-			TreeNode pre = null;
 			while (stack.Count > 0 || root != null)
 			{
 				while (root != null)
@@ -34,11 +35,11 @@ namespace LeetCode.Algorithms
 					root = root.left;
 				}
 				root = stack.Pop();
-				if (pre != null && root.val <= pre.val)
+				if (prev != null && root.val <= prev.val)
 				{
 					return false;
 				}
-				pre = root;
+				prev = root;
 				root = root.right;
 			}
 			return true;
