@@ -33,6 +33,7 @@ namespace LeetCode.Algorithms
 				}
 				last = current;
 			}
+
 			return result;
 		}
 	}
