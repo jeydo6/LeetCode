@@ -50,6 +50,7 @@ namespace Leetcode.Algorithms
 					morseWord.ToString()
 				);
 			}
+
 			return morseWords.Count;
 		}
 	}
