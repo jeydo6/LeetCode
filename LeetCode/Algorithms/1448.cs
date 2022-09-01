@@ -2,7 +2,8 @@
 
 namespace LeetCode.Algorithms
 {
-	class _1448
+	// MEDIUM
+	internal class _1448
 	{
 		public class TreeNode
 		{
