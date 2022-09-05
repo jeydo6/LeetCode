@@ -2,7 +2,8 @@
 
 namespace LeetCode.Algorithms
 {
-	class _429
+	// MEDIUM
+	internal class _429
 	{
 		public class Node
 		{
