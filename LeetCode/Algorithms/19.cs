@@ -1,42 +1,41 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// MEDIUM
+internal class _19
 {
-	// MEDIUM
-	internal class _19
+	public class ListNode
 	{
-		public class ListNode
+		public ListNode(int x)
 		{
-			public ListNode(int x)
-			{
-				val = x;
-			}
-
-			public int val;
-
-			public ListNode next;
+			val = x;
 		}
 
-		public static ListNode RemoveNthFromEnd(ListNode head, int n)
+		public int val;
+
+		public ListNode next;
+	}
+
+	public static ListNode RemoveNthFromEnd(ListNode head, int n)
+	{
+		var start = new ListNode(0)
 		{
-			var start = new ListNode(0)
-			{
-				next = head
-			};
-			var slow = start;
-			var fast = start;
+			next = head
+		};
+		var slow = start;
+		var fast = start;
 
-			for (var i = 0; i < n + 1; i++)
-			{
-				fast = fast.next;
-			}
-
-			while (fast != null)
-			{
-				slow = slow.next;
-				fast = fast.next;
-			}
-
-			slow.next = slow.next.next;
-			return start.next;
+		for (var i = 0; i < n + 1; i++)
+		{
+			fast = fast.next;
 		}
+
+		while (fast != null)
+		{
+			slow = slow.next;
+			fast = fast.next;
+		}
+
+		slow.next = slow.next.next;
+		return start.next;
 	}
 }
