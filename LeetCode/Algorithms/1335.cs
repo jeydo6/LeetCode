@@ -25,7 +25,7 @@ internal class _1335
 			for (var i = 0; i < jobDifficulty.Length - daysRemaining + 1; i++)
 			{
 				var dailyMaxJobDifficulty = 0;
-				for (int j = i + 1; j < jobDifficulty.Length - daysRemaining + 2; j++)
+				for (var j = i + 1; j < jobDifficulty.Length - daysRemaining + 2; j++)
 				{
 					dailyMaxJobDifficulty = Math.Max(dailyMaxJobDifficulty, jobDifficulty[j - 1]);
 					if (minDifficulty[daysRemaining - 1][j] != int.MaxValue)
