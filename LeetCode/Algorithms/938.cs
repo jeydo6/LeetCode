@@ -1,62 +1,60 @@
 ﻿using System.Collections.Generic;
 
-namespace Leetcode.Algorithms
+namespace Leetcode.Algorithms;
+
+// EASY
+internal class _938
 {
-	// EASY
-	internal class _938
+	public class TreeNode
 	{
-		public class TreeNode
+		public TreeNode(int value)
 		{
-			public TreeNode(int value)
-			{
-				val = value;
-			}
-
-			public TreeNode(int value, TreeNode left, TreeNode right)
-			{
-				val = value;
-				this.left = left;
-				this.right = right;
-			}
-
-			public int val;
-
-			public TreeNode left;
-
-			public TreeNode right;
-
+			val = value;
 		}
 
-		public static int RangeSumBST(TreeNode root, int low, int high)
+		public TreeNode(int value, TreeNode left, TreeNode right)
 		{
-			var result = 0;
+			val = value;
+			this.left = left;
+			this.right = right;
+		}
 
-			var stack = new Stack<TreeNode>();
-			stack.Push(root);
+		public int val;
 
-			while (stack.Count > 0)
+		public TreeNode left;
+
+		public TreeNode right;
+	}
+
+	public static int RangeSumBST(TreeNode root, int low, int high)
+	{
+		var result = 0;
+
+		var stack = new Stack<TreeNode>();
+		stack.Push(root);
+
+		while (stack.Count > 0)
+		{
+			var node = stack.Pop();
+			if (node != null)
 			{
-				var node = stack.Pop();
-				if (node != null)
+				if (node.val >= low && node.val <= high)
 				{
-					if (node.val >= low && node.val <= high)
-					{
-						result += node.val;
-					}
+					result += node.val;
+				}
 
-					if (node.val > low)
-					{
-						stack.Push(node.left);
-					}
+				if (node.val > low)
+				{
+					stack.Push(node.left);
+				}
 
-					if (node.val < high)
-					{
-						stack.Push(node.right);
-					}
+				if (node.val < high)
+				{
+					stack.Push(node.right);
 				}
 			}
-
-			return result;
 		}
+
+		return result;
 	}
 }
