@@ -6,7 +6,6 @@ internal class _121
 	public static int MaxProfit(int[] prices)
 	{
 		var result = 0;
-
 		var minPrice = int.MaxValue;
 		for (var i = 0; i < prices.Length; i++)
 		{
@@ -19,7 +18,6 @@ internal class _121
 				result = prices[i] - minPrice;
 			}
 		}
-
 		return result;
 	}
 }
