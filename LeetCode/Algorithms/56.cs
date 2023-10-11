@@ -13,11 +13,13 @@ namespace LeetCode.Algorithms
 				return intervals;
 			}
 
-			Array.Sort(intervals, (i1, i2) => i1[0].CompareTo(i2[0]));
+			Array.Sort(intervals, (i1, i2) => i1[0] - i2[0]);
 
-			var result = new List<int[]>();
+			var result = new List<int[]>
+			{
+				intervals[0]
+			};
 			var newInterval = intervals[0];
-			result.Add(newInterval);
 			foreach (var interval in intervals)
 			{
 				if (interval[0] <= newInterval[1])
