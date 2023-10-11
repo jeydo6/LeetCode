@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	class _116
+	internal class _116
 	{
 		public class Node
 		{
