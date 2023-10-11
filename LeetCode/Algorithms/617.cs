@@ -13,32 +13,32 @@ namespace LeetCode.Algorithms
 			public TreeNode right;
 		}
 
-		public static TreeNode MergeTrees(TreeNode t1, TreeNode t2)
+		public static TreeNode MergeTrees(TreeNode root1, TreeNode root2)
 		{
-			if (t1 == null && t2 == null)
+			if (root1 == null && root2 == null)
 			{
 				return null;
 			}
 
-			if (t1 == null)
+			if (root1 == null)
 			{
-				t1 = new TreeNode(0);
+				root1 = new TreeNode(0);
 			}
-			if (t2 == null)
+			if (root2 == null)
 			{
-				t2 = new TreeNode(0);
-			}
-
-			var result = new TreeNode(t1.val + t2.val);
-
-			if (t1.left != null || t2.left != null)
-			{
-				result.left = MergeTrees(t1.left, t2.left);
+				root2 = new TreeNode(0);
 			}
 
-			if (t1.right != null || t2.right != null)
+			var result = new TreeNode(root1.val + root2.val);
+
+			if (root1.left != null || root2.left != null)
 			{
-				result.right = MergeTrees(t1.right, t2.right);
+				result.left = MergeTrees(root1.left, root2.left);
+			}
+
+			if (root1.right != null || root2.right != null)
+			{
+				result.right = MergeTrees(root1.right, root2.right);
 			}
 
 			return result;
