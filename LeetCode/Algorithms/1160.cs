@@ -1,47 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _1160
-    {
-        public Int32 CountCharacters(String[] words, String chars)
-        {
-            Int32 result = 0;
+	internal class _1160
+	{
+		public static int CountCharacters(string[] words, string chars)
+		{
+			var result = 0;
 
-            Int32[] total = new Int32[26];
-            foreach (Char c in chars)
-            {
-                Int32 index = c - 'a';
-                total[index]++;
-            }
+			var total = new int[26];
+			foreach (var ch in chars)
+			{
+				total[ch - 'a']++;
+			}
 
-            foreach (String w in words)
-            {
-                Boolean isValid = true;
+			foreach (var w in words)
+			{
+				var isValid = true;
 
-                Int32[] local = new Int32[26];
-                foreach (Char c in w)
-                {
-                    Int32 index = c - 'a';
-                    local[index]++;
-                    if (local[index] > total[index])
-                    {
-                        isValid = false;
-                        break;
-                    }
-                }
+				var local = new int[26];
+				foreach (var ch in w)
+				{
+					local[ch - 'a']++;
+					if (local[ch - 'a'] > total[ch - 'a'])
+					{
+						isValid = false;
+						break;
+					}
+				}
 
-                if (isValid)
-                {
-                    result += w.Length;
-                }
-            }
+				if (isValid)
+				{
+					result += w.Length;
+				}
+			}
 
-            return result;
-        }
-    }
+			return result;
+		}
+	}
 }
