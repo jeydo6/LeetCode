@@ -7,6 +7,7 @@ namespace LeetCode.Algorithms
 	{
 		public static int MaxProfit(int[] prices)
 		{
+
 			var minPrice = int.MaxValue;
 			var maxProfit = int.MinValue;
 			for (var i = 0; i < prices.Length; i++)
