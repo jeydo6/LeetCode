@@ -1,4 +1,4 @@
-﻿namespace Leetcode.Algorithms
+﻿namespace LeetCode.Algorithms
 {
 	// MEDIUM
 	internal class _669
