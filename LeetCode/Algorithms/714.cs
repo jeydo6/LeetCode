@@ -3,7 +3,7 @@ using System;
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-public class _714
+internal class _714
 {
 	public static int MaxProfit(int[] prices, int fee)
 	{
