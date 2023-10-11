@@ -3,7 +3,7 @@
 	// MEDIUM
 	internal class _208
 	{
-		public static int Main()
+		public static int Result()
 		{
 			return 0;
 		}
