@@ -1,36 +1,34 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _374
 {
-
-	// EASY
-	internal class _374
+	public static int GuessNumber(int n)
 	{
-		public static int GuessNumber(int n)
+		var lo = 1;
+		var hi = n;
+		while (lo <= hi)
 		{
-			var l = 1;
-			var r = n;
-			while (l <= r)
+			int m = lo + (hi - lo) / 2;
+			if (Guess(m) == 0)
 			{
-				int m = l + (r - l) / 2;
-				if (Guess(m) == 0)
-				{
-					return m;
-				}
-
-				if (Guess(m) < 0)
-				{
-					r = m - 1;
-				}
-				else
-				{
-					l = m + 1;
-				}
+				return m;
 			}
-			return 0;
-		}
 
-		private static int Guess(int n)
-		{
-			return n;
+			if (Guess(m) < 0)
+			{
+				hi = m - 1;
+			}
+			else
+			{
+				lo = m + 1;
+			}
 		}
+		return -1;
+	}
+
+	private static int Guess(int n)
+	{
+		return n;
 	}
 }
