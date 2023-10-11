@@ -1,5 +1,6 @@
 ﻿namespace LeetCode.Algorithms
 {
+	// MEDIUM
 	class _46
 	{
 		public static IList<IList<int>> Permute(int[] nums, List<int> current = null)
