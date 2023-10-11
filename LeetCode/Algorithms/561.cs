@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _561
+	internal class _561
 	{
 		public static int ArrayPairSum(int[] numbers)
 		{
