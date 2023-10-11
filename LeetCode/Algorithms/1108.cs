@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Leetcode.Algorithms
+namespace LeetCode.Algorithms
 {
 	internal class _1108
 	{
