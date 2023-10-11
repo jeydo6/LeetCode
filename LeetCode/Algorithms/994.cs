@@ -18,13 +18,14 @@ namespace LeetCode.Algorithms
 			{
 				for (var j = 0; j < grid[0].Length; j++)
 				{
-					if (grid[i][j] == 1)
+					switch (grid[i][j])
 					{
-						fresh++;
-					}
-					else if (grid[i][j] == 2)
-					{
-						rotted.Enqueue(new int[] { i, j });
+						case 1:
+							fresh++;
+							break;
+						case 2:
+							rotted.Enqueue(new[] { i, j });
+							break;
 					}
 				}
 			}
@@ -35,12 +36,12 @@ namespace LeetCode.Algorithms
 			}
 
 			var result = 0;
-			var directions = new int[][]
+			var directions = new[]
 			{
-				new int[] { 1, 0 },
-				new int[] { -1, 0 },
-				new int[] { 0, 1 },
-				new int[] { 0, -1 },
+				new[] { 1, 0 },
+				new[] { -1, 0 },
+				new[] { 0, 1 },
+				new[] { 0, -1 },
 			};
 			while (rotted.Count > 0)
 			{
@@ -63,7 +64,7 @@ namespace LeetCode.Algorithms
 						}
 
 						grid[x][y] = 2;
-						rotted.Enqueue(new int[] { x, y });
+						rotted.Enqueue(new[] { x, y });
 						fresh--;
 					}
 				}
@@ -73,10 +74,8 @@ namespace LeetCode.Algorithms
 			{
 				return result - 1;
 			}
-			else
-			{
-				return -1;
-			}
+
+			return -1;
 		}
 	}
 }
