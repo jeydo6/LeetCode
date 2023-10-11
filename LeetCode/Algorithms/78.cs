@@ -2,35 +2,28 @@
 
 namespace LeetCode.Algorithms
 {
-	class _78
+	// EASY
+	internal class _78
 	{
-		public static void SetZeroes(int[][] matrix)
+		public static IList<IList<int>> Subsets(int[] nums)
 		{
-			var rows = new HashSet<int>();
-			var columns = new HashSet<int>();
-
-			for (var i = 0; i < matrix.Length; i++)
+			var result = new List<IList<int>>
 			{
-				for (var j = 0; j < matrix[0].Length; j++)
+				new List<int>()
+			};
+			for (var i = 0; i < nums.Length; i++)
+			{
+				var count = result.Count;
+				for (var j = 0; j < count; j++)
 				{
-					if (matrix[i][j] == 0)
+					var subset = new List<int>(result[j])
 					{
-						rows.Add(i);
-						columns.Add(j);
-					}
+						nums[i]
+					};
+					result.Add(subset);
 				}
 			}
-
-			for (var i = 0; i < matrix.Length; i++)
-			{
-				for (var j = 0; j < matrix[0].Length; j++)
-				{
-					if (rows.Contains(i) || columns.Contains(j))
-					{
-						matrix[i][j] = 0;
-					}
-				}
-			}
+			return result;
 		}
 	}
 }
