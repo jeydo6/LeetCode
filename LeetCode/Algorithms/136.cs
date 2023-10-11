@@ -1,5 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
+	// EASY
 	internal class _136
 	{
 		public static int SingleNumber(int[] nums)
