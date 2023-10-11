@@ -1,29 +1,29 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _1351
 {
-	class _1351
+	public static int CountNegatives(int[][] grid)
 	{
-		public static int CountNegatives(int[][] grid)
+		var n = grid.Length;
+		var m = grid[0].Length;
+
+		var i = n - 1;
+		var j = 0;
+
+		var result = 0;
+		while (i >= 0 && j < m)
 		{
-			var n = grid.Length;
-			var m = grid[0].Length;
-
-			var i = n - 1;
-			var j = 0;
-
-			var result = 0;
-			while (i >= 0 && j < m)
+			if (grid[i][j] < 0)
 			{
-				if (grid[i][j] < 0)
-				{
-					result += m - j;
-					i--;
-				}
-				else
-				{
-					j++;
-				}
+				result += m - j;
+				i--;
 			}
-			return result;
+			else
+			{
+				j++;
+			}
 		}
+		return result;
 	}
 }
