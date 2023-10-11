@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode
+namespace LeetCode.Algorithms
 {
 	class _1389
 	{
