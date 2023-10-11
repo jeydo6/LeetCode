@@ -27,7 +27,7 @@ internal class _912
 		var index = 0;
 		for (var val = minVal; val <= maxVal; ++val)
 		{
-			while (counts.ContainsKey(val))
+			while (counts.ContainsKey(val) && counts[val] > 0)
 			{
 				nums[index] = val;
 				index++;
