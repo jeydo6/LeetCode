@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-public class _1027
+internal class _1027
 {
 	public static int LongestArithSeqLength(int[] nums)
 	{
