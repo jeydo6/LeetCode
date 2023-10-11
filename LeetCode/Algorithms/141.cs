@@ -20,13 +20,13 @@
 			{
 				return false;
 			}
-			var walker = head;
-			var runner = head;
-			while (runner.next != null && runner.next.next != null)
+			var slow = head;
+			var fast = head;
+			while (fast.next != null && fast.next.next != null)
 			{
-				walker = walker.next;
-				runner = runner.next.next;
-				if (walker == runner)
+				slow = slow.next;
+				fast = fast.next.next;
+				if (slow == fast)
 				{
 					return true;
 				}
