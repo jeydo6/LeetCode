@@ -1,51 +1,41 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// EASY
+internal class _232
 {
-	// EASY
-	internal class _232
+	public class MyQueue
 	{
-		public static void GetResult()
+		private readonly Stack<int> _in = new Stack<int>();
+		private readonly Stack<int> _out = new Stack<int>();
+
+		public void Push(int x)
 		{
-			var obj = new MyQueue();
-			obj.Push(1);
-			var param_2 = obj.Pop();
-			var param_3 = obj.Peek();
-			var param_4 = obj.Empty();
+			_in.Push(x);
 		}
 
-		public class MyQueue
+		public int Pop()
 		{
-			private readonly Stack<int> _in = new Stack<int>();
-			private readonly Stack<int> _out = new Stack<int>();
+			Peek();
+			return _out.Pop();
+		}
 
-			public void Push(int x)
+		public int Peek()
+		{
+			if (_out.Count == 0)
 			{
-				_in.Push(x);
-			}
-
-			public int Pop()
-			{
-				Peek();
-				return _out.Pop();
-			}
-
-			public int Peek()
-			{
-				if (_out.Count == 0)
+				while (_in.Count > 0)
 				{
-					while (_in.Count > 0)
-					{
-						_out.Push(_in.Pop());
-					}
+					_out.Push(_in.Pop());
 				}
-				return _out.Peek();
 			}
+			return _out.Peek();
+		}
 
-			public bool Empty()
-			{
-				return _in.Count == 0 && _out.Count == 0;
-			}
+		public bool Empty()
+		{
+			return _in.Count == 0 && _out.Count == 0;
 		}
 	}
 }
