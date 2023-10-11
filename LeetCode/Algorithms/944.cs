@@ -1,28 +1,27 @@
-namespace LeetCode.Algorithms
-{
-	// EASY
-	internal class _944
-	{
-		public static int MinDeletionSize(string[] arr)
-		{
-			if (arr.Length < 2)
-			{
-				return 0;
-			}
+namespace LeetCode.Algorithms;
 
-			var result = 0;
-			for (var j = 0; j < arr[0].Length; j++)
+// EASY
+internal class _944
+{
+	public static int MinDeletionSize(string[] strs)
+	{
+		if (strs.Length < 2)
+		{
+			return 0;
+		}
+
+		var result = 0;
+		for (var j = 0; j < strs[0].Length; j++)
+		{
+			for (var i = 1; i < strs.Length; i++)
 			{
-				for (var i = 1; i < arr.Length; i++)
+				if (strs[i - 1][j] > strs[i][j])
 				{
-					if (arr[i - 1][j] > arr[i][j])
-					{
-						result++;
-						break;
-					}
+					result++;
+					break;
 				}
 			}
-			return result;
 		}
+		return result;
 	}
 }
