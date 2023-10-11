@@ -1,6 +1,6 @@
 namespace LeetCode.Algorithms
 {
-	public class _461
+	internal class _461
 	{
 		public static int HammingDistance(int x, int y)
 		{
