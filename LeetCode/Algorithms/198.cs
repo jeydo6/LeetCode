@@ -11,6 +11,7 @@ namespace LeetCode.Algorithms
 			{
 				return 0;
 			}
+
 			var prev1 = 0;
 			var prev2 = 0;
 			foreach (var num in nums)
