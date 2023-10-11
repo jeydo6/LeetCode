@@ -9,20 +9,20 @@ internal class _1088
 
 	public static int ConfusingNumberII(int n)
 	{
-		return DFS(n.ToString(), false, new StringBuilder());
+		return ConfusingNumberII(n.ToString(), false, new StringBuilder());
 	}
 
-	private static int DFS(string s, bool smaller, StringBuilder sb)
+	private static int ConfusingNumberII(string s, bool smaller, StringBuilder num)
 	{
-		if (sb.Length == s.Length)
+		if (num.Length == s.Length)
 		{
 			var zeros = 0;
-			while (zeros < sb.Length && sb[zeros] == '0')
+			while (zeros < num.Length && num[zeros] == '0')
 			{
 				zeros++;
 			}
 
-			var temp = sb.ToString()[zeros..];
+			var temp = num.ToString()[zeros..];
 
 			var lo = 0;
 			var hi = temp.Length - 1;
@@ -42,14 +42,14 @@ internal class _1088
 		var result = 0;
 		for (var i = 0; i < _digits.Length; i++)
 		{
-			if (!smaller && _digits[i] > s[sb.Length])
+			if (!smaller && _digits[i] > s[num.Length])
 			{
 				break;
 			}
 
-			sb.Append(_digits[i]);
-			result += DFS(s, smaller || _digits[i] < s[sb.Length - 1], sb);
-			sb.Length--;
+			num.Append(_digits[i]);
+			result += ConfusingNumberII(s, smaller || _digits[i] < s[num.Length - 1], num);
+			num.Length--;
 		}
 		return result;
 	}
