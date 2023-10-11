@@ -13,23 +13,11 @@ internal class _93
 		var length1 = Math.Max(1, s.Length - 9);
 		while (length1 <= 3 && length1 <= s.Length - 3)
 		{
-			if (!IsValid(s, 0, length1))
-			{
-				length1++;
-				continue;
-			}
-
 			var length2 = Math.Max(1, s.Length - length1 - 6);
-			while (length2 <= 3 && length2 <= s.Length - length1 - 2)
+			while (IsValid(s, 0, length1) && length2 <= 3 && length2 <= s.Length - length1 - 2)
 			{
-				if (!IsValid(s, length1, length2))
-				{
-					length2++;
-					continue;
-				}
-
 				var length3 = Math.Max(1, s.Length - length1 - length2 - 3);
-				while (length3 <= 3 && length3 <= s.Length - length1 - length2 - 1)
+				while (IsValid(s, length1, length2) && length3 <= 3 && length3 <= s.Length - length1 - length2 - 1)
 				{
 					if (
 						IsValid(s, length1 + length2, length3) &&
@@ -50,6 +38,7 @@ internal class _93
 			}
 			length1++;
 		}
+
 		return result;
 	}
 
