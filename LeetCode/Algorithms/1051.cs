@@ -1,6 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
-	public class _1051
+	internal class _1051
 	{
 		public static int HeightChecker(int[] heights)
 		{
