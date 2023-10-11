@@ -8,7 +8,6 @@ namespace LeetCode.Algorithms
 		public static IList<IList<int>> Generate(int numRows)
 		{
 			var result = new List<IList<int>>();
-
 			var currentRow = new List<int>();
 			for (var i = 0; i < numRows; i++)
 			{
