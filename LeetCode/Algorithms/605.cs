@@ -1,25 +1,24 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _605
 {
-	// EASY
-	internal class _605
+	public static bool CanPlaceFlowers(int[] flowerbed, int n)
 	{
-		public static bool CanPlaceFlowers(int[] flowerbed, int n)
+		var count = 0;
+		for (var i = 0; i < flowerbed.Length && count < n; i++)
 		{
-			var count = 0;
-			for (var i = 0; i < flowerbed.Length && count < n; i++)
+			if (flowerbed[i] == 0)
 			{
-				if (flowerbed[i] == 0)
+				var next = (i == flowerbed.Length - 1) ? 0 : flowerbed[i + 1];
+				var prev = (i == 0) ? 0 : flowerbed[i - 1];
+				if (next == 0 && prev == 0)
 				{
-					var next = (i == flowerbed.Length - 1) ? 0 : flowerbed[i + 1];
-					var prev = (i == 0) ? 0 : flowerbed[i - 1];
-					if (next == 0 && prev == 0)
-					{
-						flowerbed[i] = 1;
-						count++;
-					}
+					flowerbed[i] = 1;
+					count++;
 				}
 			}
-			return count == n;
 		}
+		return count == n;
 	}
 }
