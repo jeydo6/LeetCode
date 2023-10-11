@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms
 {
 	// HARD
-	class _834
+	internal class _834
 	{
 		private int[] _result;
 		private int[] _count;
