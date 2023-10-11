@@ -28,6 +28,7 @@ namespace LeetCode.Algorithms
 
 			var queue = new Queue<TreeNode>();
 			queue.Enqueue(root);
+
 			while (queue.Count > 0)
 			{
 				var list = new List<int>();
