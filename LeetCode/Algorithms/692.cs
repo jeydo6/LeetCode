@@ -14,6 +14,7 @@ internal class _692
 			{
 				counts[word] = 0;
 			}
+
 			counts[word]++;
 		}
 
