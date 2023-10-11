@@ -2,24 +2,23 @@
 
 namespace LeetCode.Algorithms
 {
-	class _1710
+	// EASY
+	internal class _1710
 	{
 		public static int MaximumUnits(int[][] boxTypes, int truckSize)
 		{
 			Array.Sort(boxTypes, (a, b) => b[1] - a[1]);
-			
+
 			var result = 0;
-			foreach (var item in boxTypes)
+			for (var i = 0; i < boxTypes.Length; i++)
 			{
-				if (item[0] < truckSize)
+				var boxCount = Math.Min(truckSize, boxTypes[i][0]);
+				result += boxCount * boxTypes[i][1];
+				truckSize -= boxCount;
+
+				if (truckSize == 0)
 				{
-					result += item[0] * item[1];
-					truckSize -= item[0];
-				}
-				else
-				{
-					result += truckSize * item[1];
-					return result;
+					break;
 				}
 			}
 			return result;
