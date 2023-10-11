@@ -1,55 +1,54 @@
 ﻿using System;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// MEDIUM
+internal class _382
 {
-	// MEDIUM
-	internal class _382
+	public class ListNode
 	{
-		public class ListNode
+		public int val;
+		public ListNode next;
+		public ListNode(int val = 0, ListNode next = null)
 		{
-			public int val;
-			public ListNode next;
-			public ListNode(int val = 0, ListNode next = null)
-			{
-				this.val = val;
-				this.next = next;
-			}
+			this.val = val;
+			this.next = next;
+		}
+	}
+
+	public static void GetResult()
+	{
+		var head = new ListNode();
+		var obj = new Solution(head);
+		_ = obj.GetRandom();
+	}
+
+	public class Solution
+	{
+		private static readonly Random _random = new Random();
+
+		private readonly ListNode _head;
+
+		public Solution(ListNode head)
+		{
+			_head = head;
 		}
 
-		public static void GetResult()
+		public int GetRandom()
 		{
-			var head = new ListNode();
-			var obj = new Solution(head);
-			_ = obj.GetRandom();
-		}
-
-		public class Solution
-		{
-			private static readonly Random _random = new Random();
-
-			private readonly ListNode _head;
-
-			public Solution(ListNode head)
+			var i = 1;
+			var c = _head;
+			var result = c.val;
+			while (c.next != null)
 			{
-				_head = head;
-			}
-
-			public int GetRandom()
-			{
-				var i = 1;
-				var c = _head;
-				var result = c.val;
-				while (c.next != null)
+				c = c.next;
+				if (_random.Next(i + 1) == i)
 				{
-					c = c.next;
-					if (_random.Next(i + 1) == i)
-					{
-						result = c.val;
-					}
-					i++;
+					result = c.val;
 				}
-				return result;
+				i++;
 			}
+			return result;
 		}
 	}
 }
