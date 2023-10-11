@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Algorithms
 {
-	public class _430
+	internal class _430
 	{
 		public class Node
 		{
