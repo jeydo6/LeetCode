@@ -2,7 +2,8 @@
 
 namespace LeetCode.Algorithms
 {
-	class _1022
+	// EASY
+	internal class _1022
 	{
 		public class TreeNode
 		{
