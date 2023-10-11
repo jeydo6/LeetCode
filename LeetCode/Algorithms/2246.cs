@@ -15,7 +15,7 @@ internal class _2246
 		}
 
 		var queue = new Queue<int>();
-		int[][] longestChains = new int[parent.Length][];
+		var longestChains = new int[parent.Length][];
 		for (var i = 0; i < parent.Length; i++)
 		{
 			longestChains[i] = new int[2];
