@@ -1,36 +1,35 @@
-using System;
-
-public class _883
+namespace Leetcode.Algorithms
 {
-    public Int32 ProjectionArea(Int32[][] grid)
-    {
-        Int32 result = 0;
+	public class _883
+	{
+		public static int ProjectionArea(int[][] grid)
+		{
+			var result = 0;
+			var mx = -1;
+			var my = -1;
+			for (var i = 0; i < grid.Length; i++)
+			{
+				for (var j = 0; j < grid[i].Length; j++)
+				{
+					if (grid[j][i] > mx)
+					{
+						mx = grid[j][i];
+					}
 
-        Int32 mx = -1;
-        Int32 my = -1;
+					if (grid[i][j] > my)
+					{
+						my = grid[i][j];
+					}
 
-        for (Int32 i = 0; i < grid.Length; i++)
-        {
-            for (Int32 j = 0; j < grid[i].Length; j++)
-            {
-                if (grid[j][i] > mx)
-                {
-                    mx = grid[j][i];
-                }
+					result += (grid[i][j] == 0 ? 0 : 1);
+				}
 
-                if (grid[i][j] > my)
-                {
-                    my = grid[i][j];
-                }
+				result += (mx + my);
 
-                result += (grid[i][j] == 0 ? 0 : 1);
-            }
-
-            result += (mx + my);
-
-            mx = -1;
-            my = -1;
-        }
-        return result;
-    }
+				mx = -1;
+				my = -1;
+			}
+			return result;
+		}
+	}
 }
