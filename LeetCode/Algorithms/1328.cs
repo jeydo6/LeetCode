@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _1328
+	internal class _1328
 	{
 		public static string BreakPalindrome(string palindrome)
 		{
@@ -13,13 +13,15 @@
 			var chars = palindrome.ToCharArray();
 			for (var i = 0; i < palindrome.Length / 2; i++)
 			{
-				if (chars[i] != 'a')
+				if (chars[i] == 'a')
 				{
-					index = i;
-					chars[i] = 'a';
-
-					break;
+					continue;
 				}
+
+				index = i;
+				chars[i] = 'a';
+
+				break;
 			}
 
 			if (index == -1)
