@@ -12,7 +12,11 @@ internal class _168
             columnNumber /= 26;
         }
 
-        var 
-        return ans.reverse().toString
+        var result = new char[sb.Length];
+        for (var i = 0; i < sb.Length; i++)
+        {
+            result[^(i + 1)] = sb[i];
+        }
+        return new string(result);
     }
 }
