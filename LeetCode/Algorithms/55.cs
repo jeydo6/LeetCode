@@ -1,23 +1,22 @@
 ﻿using System;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// MEDIUM
+internal class _55
 {
-	internal class _55
+	public static bool CanJump(int[] nums)
 	{
-		public static bool CanJump(int[] nums)
+		var index = 0;
+		for (var i = 0; i <= index; i++)
 		{
-			var reach = 0;
-			for (var i = 0; i <= reach; i++)
+			index = Math.Max(index, i + nums[i]);
+
+			if (index >= nums.Length - 1)
 			{
-				reach = Math.Max(reach, i + nums[i]);
-
-				if (reach >= nums.Length - 1)
-				{
-					return true;
-				}
+				return true;
 			}
-
-			return false;
 		}
+		return false;
 	}
 }
