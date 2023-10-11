@@ -1,56 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Leetcode.Algorithms
 {
-    public class _811
-    {
-        public IList<String> SubdomainVisits(String[] cpdomains)
-        {
-            IList<String> resultList = new List<String>();
+	internal class _811
+	{
+		public static IList<string> SubdomainVisits(string[] cpdomains)
+		{
+			var result = new List<string>();
 
-            Dictionary<String, Int32> cpsubdomains = new Dictionary<String, Int32>();
-            foreach (String cpdomain in cpdomains)
-            {
-                Int32 spacePos = cpdomain.IndexOf(' ');
-                Int32 number = Convert.ToInt32(cpdomain.Substring(0, spacePos));
-                String domain = cpdomain.Substring(spacePos + 1);
+			var cpsubdomains = new Dictionary<string, int>();
+			foreach (var cpdomain in cpdomains)
+			{
+				var spacePos = cpdomain.IndexOf(' ');
+				var number = int.Parse(cpdomain[..spacePos]);
+				var domain = cpdomain[(spacePos + 1)..];
 
-                String[] parts = domain
-                    .Split('.');
+				var parts = domain.Split('.');
 
-                String subdomain = "";
-                for (Int32 i = parts.Length - 1; i >= 0; i--)
-                {
-                    if (subdomain.Length == 0)
-                    {
-                        subdomain = parts[i];
-                    }
-                    else
-                    {
-                        subdomain = parts[i] + "." + subdomain;
-                    }
+				var subdomain = "";
+				for (var i = parts.Length - 1; i >= 0; i--)
+				{
+					if (subdomain.Length == 0)
+					{
+						subdomain = parts[i];
+					}
+					else
+					{
+						subdomain = parts[i] + "." + subdomain;
+					}
 
-                    if (!cpsubdomains.ContainsKey(subdomain))
-                    {
-                        cpsubdomains[subdomain] = number;
-                    }
-                    else
-                    {
-                        cpsubdomains[subdomain] += number;
-                    }
-                }
-            }
+					if (!cpsubdomains.ContainsKey(subdomain))
+					{
+						cpsubdomains[subdomain] = number;
+					}
+					else
+					{
+						cpsubdomains[subdomain] += number;
+					}
+				}
+			}
 
-            foreach (KeyValuePair<String, Int32> cpsubdomain in cpsubdomains)
-            {
-                resultList.Add(cpsubdomain.Value + " " + cpsubdomain.Key);
-            }
+			foreach (var cpsubdomain in cpsubdomains)
+			{
+				result.Add(cpsubdomain.Value + " " + cpsubdomain.Key);
+			}
 
-            return resultList;
-        }
-    }
+			return result;
+		}
+	}
 }
