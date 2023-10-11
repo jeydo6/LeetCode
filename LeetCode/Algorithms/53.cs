@@ -11,7 +11,7 @@ namespace LeetCode.Algorithms
 			dp[0] = nums[0];
 
 			var max = dp[0];
-			for (int i = 1; i < nums.Length; i++)
+			for (var i = 1; i < nums.Length; i++)
 			{
 				dp[i] = nums[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);
 				max = Math.Max(max, dp[i]);
