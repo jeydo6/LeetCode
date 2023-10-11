@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace LeetCode.Algorithms;
@@ -88,7 +89,7 @@ internal class _1203
         }
 
         var visited = new List<int>();
-        while (stack > 0)
+        while (stack.Count > 0)
         {
             var current = stack.Pop();
             visited.Add(current);
