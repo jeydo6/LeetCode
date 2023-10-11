@@ -18,24 +18,25 @@ internal class _94
 		}
 	}
 
-	public static IList<int> InorderTraversal(TreeNode node)
+	public static IList<int> InorderTraversal(TreeNode root)
 	{
-		var list = new List<int>();
+		var result = new List<int>();
+
 		var stack = new Stack<TreeNode>();
+		var node = root;
 		while (node != null || stack.Count > 0)
 		{
-			if (node != null)
+			while (node != null)
 			{
 				stack.Push(node);
 				node = node.left;
 			}
-			else
-			{
-				var temp = stack.Pop();
-				list.Add(temp.val);
-				node = temp.right;
-			}
+
+			node = stack.Pop();
+			result.Add(node.val);
+			node = node.right;
 		}
-		return list;
+
+		return result;
 	}
 }
