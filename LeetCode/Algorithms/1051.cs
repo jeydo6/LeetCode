@@ -1,33 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _1051
-    {
-        public Int32 HeightChecker(Int32[] heights)
-        {
-            Int32 result = 0;
+	public class _1051
+	{
+		public static int HeightChecker(int[] heights)
+		{
+			var freq = new int[101];
+			foreach (var height in heights)
+			{
+				freq[height]++;
+			}
 
-            Int32 length = heights.Length;
+			var result = 0;
+			var current = 0;
+			foreach (var height in heights)
+			{
+				while (freq[current] == 0)
+				{
+					current++;
+				}
 
-            Int32[] temp = new Int32[length];
-            Array.Copy(heights, temp, length);
-
-            Array.Sort(temp);
-
-            for(Int32 i = 0; i < length; i++)
-            {
-                if (heights[i] != temp[i])
-                {
-                    result++;
-                }
-            }
-
-            return result;
-        }
-    }
+				if (current != height)
+				{
+					result++;
+				}
+				freq[current]--;
+			}
+			return result;
+		}
+	}
 }
