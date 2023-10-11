@@ -1,38 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Leetcode.Algorithms
 {
-    public class _766
-    {
-        public Boolean IsToeplitzMatrix(Int32[][] matrix)
-        {
-            Int32 n = matrix.Length;
-            Int32 m = matrix[0].Length;
+	// EASY
+	internal class _766
+	{
+		public static bool IsToeplitzMatrix(int[][] matrix)
+		{
+			var n = matrix.Length;
+			var m = matrix[0].Length;
 
-            if (n == 1 || m == 1)
-            {
-                return true;
-            }
+			if (n == 1 || m == 1)
+			{
+				return true;
+			}
 
-            for (Int32 i = 1; i < n; i++)
-            {
-                for (Int32 j = 1; j < m; j++)
-                {
-                    Int32 a = matrix[i - 1][j - 1];
-                    Int32 b = matrix[i][j];
+			for (var i = 1; i < n; i++)
+			{
+				for (var j = 1; j < m; j++)
+				{
+					if (matrix[i - 1][j - 1] != matrix[i][j])
+					{
+						return false;
+					}
+				}
+			}
 
-                    if (a != b)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-    }
+			return true;
+		}
+	}
 }
