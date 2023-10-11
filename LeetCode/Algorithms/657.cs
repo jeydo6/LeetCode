@@ -1,38 +1,31 @@
-using System;
-
-public class _657
+namespace LeetCode.Algorithms
 {
-    public Boolean JudgeCircle(String moves)
-    {
-        (Int32 x, Int32 y) coordinates = (0, 0);
+	public class _657
+	{
+		public static bool JudgeCircle(string moves)
+		{
+			var x = 0;
+			var y = 0;
+			foreach (char move in moves)
+			{
+				switch (move)
+				{
+					case 'U':
+						y++;
+						break;
+					case 'D':
+						y--;
+						break;
+					case 'R':
+						x++;
+						break;
+					case 'L':
+						x--;
+						break;
+				}
+			}
 
-        foreach (Char move in moves)
-        {
-            switch (Char.ToLower(move))
-            {
-                case 'u':
-                {
-                    coordinates.y += 1;
-                    break;
-                }
-                case 'd':
-                {
-                    coordinates.y -= 1;
-                    break;
-                }
-                case 'r':
-                {
-                    coordinates.x += 1;
-                    break;
-                }
-                case 'l':
-                {
-                    coordinates.x -= 1;
-                    break;
-                }
-            }
-        }
-        
-        return coordinates.x == 0 && coordinates.y == 0;
-    }
+			return x == 0 && y == 0;
+		}
+	}
 }
