@@ -1,53 +1,52 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// HARD
+internal class _23
 {
-	// HARD
-	internal class _23
+	public class ListNode
 	{
-		public class ListNode
+		public int val;
+		public ListNode next;
+		public ListNode(int val = 0, ListNode next = null)
 		{
-			public int val;
-			public ListNode next;
-			public ListNode(int val = 0, ListNode next = null)
+			this.val = val;
+			this.next = next;
+		}
+	}
+
+	public static ListNode MergeKLists(ListNode[] lists)
+	{
+		if (lists == null || lists.Length == 0)
+		{
+			return null;
+		}
+
+		var queue = new PriorityQueue<ListNode, int>(lists.Length);
+
+		var dummy = new ListNode(0);
+		var tail = dummy;
+
+		foreach (var node in lists)
+		{
+			if (node != null)
 			{
-				this.val = val;
-				this.next = next;
+				queue.Enqueue(node, node.val);
 			}
 		}
 
-		public static ListNode MergeKLists(ListNode[] lists)
+		while (queue.Count > 0)
 		{
-			if (lists == null || lists.Length == 0)
+			tail.next = queue.Dequeue();
+			tail = tail.next;
+
+			if (tail.next != null)
 			{
-				return null;
+				queue.Enqueue(tail.next, tail.next.val);
 			}
 
-			var queue = new PriorityQueue<ListNode, int>(lists.Length);
-
-			var dummy = new ListNode(0);
-			var tail = dummy;
-
-			foreach (var node in lists)
-			{
-				if (node != null)
-				{
-					queue.Enqueue(node, node.val);
-				}
-			}
-
-			while (queue.Count > 0)
-			{
-				tail.next = queue.Dequeue();
-				tail = tail.next;
-
-				if (tail.next != null)
-				{
-					queue.Enqueue(tail.next, tail.next.val);
-				}
-
-			}
-			return dummy.next;
 		}
+		return dummy.next;
 	}
 }
