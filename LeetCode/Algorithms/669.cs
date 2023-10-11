@@ -1,6 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
-	// EASY
+	// MEDIUM
 	internal class _669
 	{
 		public class TreeNode
@@ -17,46 +17,23 @@
 			public TreeNode right;
 		}
 
-		public static TreeNode TrimBST(TreeNode root, int l, int r)
+		public static TreeNode TrimBST(TreeNode root, int low, int high)
 		{
 			if (root == null)
 			{
-				return null;
+				return root;
 			}
-
-			while (root.val < l || root.val > r)
+			if (root.val > high)
 			{
-				if (root.val < l)
-				{
-					root = root.right;
-				}
-
-				if (root.val > r)
-				{
-					root = root.left;
-				}
+				return TrimBST(root.left, low, high);
 			}
-
-			var temp = root;
-			while (temp != null)
+			if (root.val < low)
 			{
-				while (temp.left != null && temp.left.val < l)
-				{
-					temp.left = temp.left.right;
-				}
-				temp = temp.left;
+				return TrimBST(root.right, low, high);
 			}
 
-			temp = root;
-			while (temp != null)
-			{
-				while (temp.right != null && temp.right.val > r)
-				{
-					temp.right = temp.right.left;
-				}
-				temp = temp.right;
-			}
-
+			root.left = TrimBST(root.left, low, high);
+			root.right = TrimBST(root.right, low, high);
 			return root;
 		}
 	}
