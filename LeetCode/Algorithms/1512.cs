@@ -1,47 +1,27 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// EASY
+internal class _1512
 {
-	class _1512
+	public static int NumIdenticalPairs(int[] nums)
 	{
-		//public static int NumIdenticalPairs(int[] numbers)
-		//{
-		//	var result = 0;
-		//	for (var i = 0; i < numbers.Length - 1; i++)
-		//	{
-		//		for (var j = i + 1; j < numbers.Length; j++)
-		//		{
-		//			if (numbers[i] == numbers[j])
-		//			{
-		//				result++;
-		//			}
-		//		}
-		//	}
-		//	return result;
-		//}
-
-		public static int NumIdenticalPairs(int[] numbers)
+		var dict = new Dictionary<int, int>();
+		foreach (var num in nums)
 		{
-			var dict = new Dictionary<int, int>();
-			foreach (var number in numbers)
+			if (!dict.ContainsKey(num))
 			{
-				if (dict.ContainsKey(number))
-				{
-					dict[number]++;
-				}
-				else
-				{
-					dict[number] = 1;
-				}
+				dict[num] = 0;
 			}
-
-			var result = 0;
-			foreach (var key in dict.Keys)
-			{
-				var value = dict[key];
-				result += value * (value - 1) / 2;
-			}
-			return result;
+			dict[num]++;
 		}
+
+		var result = 0;
+		foreach (var value in dict.Values)
+		{
+			result += value * (value - 1) / 2;
+		}
+		return result;
 	}
 }
