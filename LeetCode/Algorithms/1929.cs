@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms
 {
 	class _1929
 	{
