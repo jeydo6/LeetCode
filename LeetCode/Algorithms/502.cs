@@ -11,7 +11,7 @@ internal class _502
 		var projects = new (int Capital, int Profit)[profits.Length];
 		for (var i = 0; i < projects.Length; i++)
 		{
-			projects[i] = new(capital[i], profits[i]);
+			projects[i] = (capital[i], profits[i]);
 		}
 		Array.Sort(projects, (p1, p2) => p1.Capital - p2.Capital);
 
