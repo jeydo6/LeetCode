@@ -1,30 +1,67 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms
 {
 	// EASY
 	internal class _844
 	{
 		public static bool BackspaceCompare(string s, string t)
 		{
-			return BuildString(s) == BuildString(t);
-		}
+			var skipS = 0;
+			var skipT = 0;
 
-		private static string BuildString(string str)
-		{
-			var stack = new Stack<char>();
-			for (var i = 0; i < str.Length; i++)
+			var i = s.Length - 1;
+			var j = t.Length - 1;
+			while (i >= 0 || j >= 0)
 			{
-				if (str[i] != '#')
+				while (i >= 0)
 				{
-					stack.Push(str[i]);
+					if (s[i] == '#')
+					{
+						skipS++;
+						i--;
+					}
+					else if (skipS > 0)
+					{
+						skipS--;
+						i--;
+					}
+					else
+					{
+						break;
+					}
 				}
-				else if (stack.Count > 0)
+
+				while (j >= 0)
 				{
-					stack.Pop();
+					if (t[i] == '#')
+					{
+						skipT++;
+						j--;
+					}
+					else if (skipT > 0)
+					{
+						skipT--;
+						j--;
+					}
+					else
+					{
+						break;
+					}
 				}
+
+				if (i >= 0 && j >= 0 && s[i] != t[j])
+				{
+					return false;
+				}
+
+				if ((i >= 0) != (j >= 0))
+				{
+					return false;
+				}
+
+				i--;
+				j--;
 			}
-			return new string(stack.ToArray());
+			return true;
 		}
 	}
 }
