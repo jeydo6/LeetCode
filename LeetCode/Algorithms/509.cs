@@ -1,35 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _509
-    {
-        public Int32 Fib(Int32 N)
-        {
-            Int32[] array = new Int32[]
-            {
-                0,
-                1,
-                0
-            };
+	// EASY
+	internal class _509
+	{
+		public static int Fib(int n)
+		{
+			var array = new int[]
+			{
+				0,
+				1,
+				0
+			};
 
-            for (Int32 i = 2; i <= N; i++)
-            {
-                array[2] = array[0] + array[1];
-                array[0] = array[1];
-                array[1] = array[2];
-            }
+			for (var i = 2; i <= n; i++)
+			{
+				array[2] = array[0] + array[1];
+				array[0] = array[1];
+				array[1] = array[2];
+			}
 
-            if (N <= 2)
-            {
-                return array[N];
-            }
+			if (n <= 2)
+			{
+				return array[n];
+			}
 
-            return array[2];
-        }
-    }
+			return array[2];
+		}
+	}
 }
