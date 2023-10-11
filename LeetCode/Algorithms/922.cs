@@ -1,28 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _922
-    {
-        public Int32[] SortArrayByParityII(Int32[] A)
-        {
-            Int32 j = 1;
-            for (Int32 i = 0; i < A.Length; i += 2)
-                if (A[i] % 2 == 1)
-                {
-                    while (A[j] % 2 == 1)
-                        j += 2;
-
-                    Int32 tmp = A[i];
-                    A[i] = A[j];
-                    A[j] = tmp;
-                }
-
-            return A;
-        }
-    }
+	public class _922
+	{
+		public static int[] SortArrayByParityII(int[] nums)
+		{
+			var i = 0;
+			var j = 1;
+			var n = nums.Length;
+			while (i < n && j < n)
+			{
+				while (i < n && nums[i] % 2 == 0)
+				{
+					i += 2;
+				}
+				while (j < n && nums[j] % 2 == 1)
+				{
+					j += 2;
+				}
+				if (i < n && j < n)
+				{
+					var temp = nums[i];
+					nums[i] = nums[j];
+					nums[j] = temp;
+				}
+			}
+			return nums;
+		}
+	}
 }
