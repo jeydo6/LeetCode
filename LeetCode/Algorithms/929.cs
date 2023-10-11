@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _929
+	internal class _929
 	{
 		public static int NumUniqueEmails(string[] emails)
 		{
