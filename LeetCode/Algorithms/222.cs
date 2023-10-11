@@ -2,7 +2,7 @@
 
 namespace LeetCode.Algorithms
 {
-	public class _222
+	internal class _222
 	{
 		public class TreeNode
 		{
