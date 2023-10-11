@@ -1,16 +1,15 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _1480
+	// EASY
+	internal class _1480
 	{
-		public static int[] RunningSum(int[] numbers)
+		public static int[] RunningSum(int[] nums)
 		{
-			var result = new int[numbers.Length];
-			result[0] = numbers[0];
-			for (var i = 1; i < numbers.Length; i++)
+			for (var i = 1; i < nums.Length; i++)
 			{
-				result[i] = result[i - 1] + numbers[i];
+				nums[i] += nums[i - 1];
 			}
-			return result;
+			return nums;
 		}
 	}
 }
