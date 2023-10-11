@@ -31,3 +31,4 @@ internal class _20
 		return stack.Count == 0;
 	}
 }
+
