@@ -33,7 +33,7 @@ internal class _1466
 			var absTo = Math.Abs(to);
 			if (!visited[absTo])
 			{
-				result += MinReorder(absTo + (to > 0 ? 1 : 0), graph, visited);
+				result += MinReorder(absTo, graph, visited) + (to > 0 ? 1 : 0);
 			}
 		}
 		return result;
