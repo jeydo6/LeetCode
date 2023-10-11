@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LeetCode.Algorithms;
+using Newtonsoft.Json;
+using System;
 
 namespace LeetCode
 {
@@ -6,7 +8,10 @@ namespace LeetCode
 	{
 		static void Main()
 		{
-			Console.WriteLine("Hello World!");
+			var json = JsonConvert.SerializeObject(
+				_1480.RunningSum(new int[] { 1, 2, 3, 4 })
+			);
+			Console.WriteLine(json);
 		}
 	}
 }
