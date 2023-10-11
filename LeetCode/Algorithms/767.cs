@@ -13,7 +13,7 @@ internal class _767
 
         var maxCount = 0;
         var maxCountIndex = 0;
-        for (var i = 0; i < charCounts.length; i++)
+        for (var i = 0; i < charCounts.Length; i++)
         {
             if (charCounts[i] > maxCount)
             {
