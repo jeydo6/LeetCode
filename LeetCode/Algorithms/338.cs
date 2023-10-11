@@ -1,16 +1,15 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _338
 {
-	// EASY
-	internal class _338
+	public static int[] CountBits(int n)
 	{
-		public static int[] CountBits(int n)
+		var result = new int[n + 1];
+		for (var i = 1; i <= n; i++)
 		{
-			var result = new int[n + 1];
-			for (var i = 1; i <= n; i++)
-			{
-				result[i] = result[i >> 1] + (i & 1);
-			}
-			return result;
+			result[i] = result[i >> 1] + (i & 1);
 		}
+		return result;
 	}
 }
