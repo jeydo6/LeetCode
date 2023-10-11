@@ -3,6 +3,7 @@ using System.Threading;
 
 namespace LeetCode.Concurrency
 {
+	// EASY
 	internal class _1114
 	{
 		public class Foo
