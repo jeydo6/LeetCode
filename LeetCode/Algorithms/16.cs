@@ -2,7 +2,7 @@
 
 namespace LeetCode.Algorithms
 {
-	class _3828
+	class _16
 	{
 		public static int ThreeSumClosest(int[] numbers, int target)
 		{
