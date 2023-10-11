@@ -1,6 +1,6 @@
 ﻿namespace Leetcode.Algorithms
 {
-	public class _1025
+	internal class _1025
 	{
 		public static bool DivisorGame(int n)
 		{
