@@ -25,7 +25,7 @@ internal class _347
 		var pQueue = new PriorityQueue<int, int>();
 		foreach (var key in count.Keys)
 		{
-			pQueue.Enqueue(key, -count[key]);
+			pQueue.Enqueue(key, count[key]);
 			if (pQueue.Count > k)
 			{
 				pQueue.Dequeue();
