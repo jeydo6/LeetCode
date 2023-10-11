@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Algorithms
 {
-	//EASY
+	// MEDIUM
 	internal class _260
 	{
 		public static int[] SingleNumber(int[] nums)
