@@ -13,34 +13,34 @@
 			}
 		}
 
-		public static ListNode MergeTwoLists(ListNode l1, ListNode l2)
+		public static ListNode MergeTwoLists(ListNode list1, ListNode list2)
 		{
-			if (l1 == null)
+			if (list1 == null)
 			{
-				return l2;
+				return list2;
 			}
-			if (l2 == null)
+			if (list2 == null)
 			{
-				return l1;
+				return list1;
 			}
 
 			var temp = new ListNode(0);
 			var current = temp;
-			while (l1 != null && l2 != null)
+			while (list1 != null && list2 != null)
 			{
-				if (l1.val <= l2.val)
+				if (list1.val <= list2.val)
 				{
-					current.next = l1;
-					l1 = l1.next;
+					current.next = list1;
+					list1 = list1.next;
 				}
 				else
 				{
-					current.next = l2;
-					l2 = l2.next;
+					current.next = list2;
+					list2 = list2.next;
 				}
 				current = current.next;
 			}
-			current.next = l1 ?? l2;
+			current.next = list1 ?? list2;
 			return temp.next;
 		}
 	}
