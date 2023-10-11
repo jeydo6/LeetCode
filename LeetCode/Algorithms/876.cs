@@ -1,32 +1,31 @@
-﻿namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms;
+
+// EASY
+internal class _876
 {
-	// EASY
-	internal class _876
+	public class ListNode
 	{
-		public class ListNode
+		public ListNode(int x)
 		{
-			public ListNode(int x)
-			{
-				val = x;
-			}
-
-			public int val;
-
-			public ListNode next;
+			val = x;
 		}
 
-		public static ListNode MiddleNode(ListNode head)
+		public int val;
+
+		public ListNode next;
+	}
+
+	public static ListNode MiddleNode(ListNode head)
+	{
+		var slow = head;
+		var fast = head;
+
+		while (fast != null && fast.next != null)
 		{
-			var slow = head;
-			var fast = head;
-
-			while (fast != null && fast.next != null)
-			{
-				slow = slow.next;
-				fast = fast.next.next;
-			}
-
-			return slow;
+			slow = slow.next;
+			fast = fast.next.next;
 		}
+
+		return slow;
 	}
 }
