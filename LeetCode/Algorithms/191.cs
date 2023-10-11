@@ -1,10 +1,11 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _191
+	// EASY
+	internal class _191
 	{
 		public static int HammingWeight(uint n)
 		{
-			var count = 0U;
+			var count = 0u;
 			while (n != 0)
 			{
 				count += n & 1;
