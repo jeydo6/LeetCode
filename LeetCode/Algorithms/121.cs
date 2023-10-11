@@ -1,24 +1,25 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _121
 {
-	// EASY
-	internal class _121
+	public static int MaxProfit(int[] prices)
 	{
-		public static int MaxProfit(int[] prices)
+		var result = 0;
+
+		var minPrice = int.MaxValue;
+		for (var i = 0; i < prices.Length; i++)
 		{
-			var minPrice = int.MaxValue;
-			var maxProfit = 0;
-			for (var i = 0; i < prices.Length; i++)
+			if (prices[i] < minPrice)
 			{
-				if (prices[i] < minPrice)
-				{
-					minPrice = prices[i];
-				}
-				else if (prices[i] - minPrice > maxProfit)
-				{
-					maxProfit = prices[i] - minPrice;
-				}
+				minPrice = prices[i];
 			}
-			return maxProfit;
+			else if (prices[i] - minPrice > result)
+			{
+				result = prices[i] - minPrice;
+			}
 		}
+
+		return result;
 	}
 }
