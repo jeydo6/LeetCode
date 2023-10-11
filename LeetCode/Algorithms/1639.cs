@@ -4,6 +4,7 @@
 internal class _1639
 {
 	private static readonly int Modulo = 1000000007;
+
 	public static int NumWays(string[] words, string target)
 	{
 		var counts = new int[26][];
