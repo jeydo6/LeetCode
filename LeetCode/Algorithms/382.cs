@@ -16,13 +16,6 @@ internal class _382
 		}
 	}
 
-	public static void GetResult()
-	{
-		var head = new ListNode();
-		var obj = new Solution(head);
-		_ = obj.GetRandom();
-	}
-
 	public class Solution
 	{
 		private static readonly Random _random = new Random();
