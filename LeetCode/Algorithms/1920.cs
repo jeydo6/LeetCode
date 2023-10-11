@@ -1,15 +1,16 @@
-﻿using System.Linq;
-
-namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms
 {
-	class _1920
+	// EASY
+	internal class _1920
 	{
-		public static int[] BuildArray(int[] numbers)
+		public static int[] BuildArray(int[] nums)
 		{
-			return numbers
-				.Where(i => i >= 0 && i < numbers.Length)
-				.Select(i => numbers[i])
-				.ToArray();
+			var result = new int[nums.Length];
+			for (var i = 0; i < nums.Length; i++)
+			{
+				result[i] = nums[nums[i]];
+			}
+			return result;
 		}
 	}
 }
