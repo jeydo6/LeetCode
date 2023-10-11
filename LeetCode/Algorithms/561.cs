@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
-    public class _561
-    {
-        public Int32 ArrayPairSum(Int32[] nums)
-        {
-            Int32 result = 0;
+	public class _561
+	{
+		public static int ArrayPairSum(int[] numbers)
+		{
+			var result = 0;
 
-            Array.Sort(nums);
+			Array.Sort(numbers);
 
-            for (Int32 i = 0; i < nums.Length / 2; i++)
-            {
-                result += nums[i * 2];
-            }
+			for (var i = 0; i < numbers.Length; i += 2)
+			{
+				result += numbers[i];
+			}
 
-            return result;
-        }
-    }
+			return result;
+		}
+	}
 }
