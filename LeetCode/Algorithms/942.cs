@@ -1,6 +1,6 @@
 namespace Leetcode.Algorithms
 {
-	public class _942
+	internal class _942
 	{
 		public static int[] DiStringMatch(string s)
 		{
