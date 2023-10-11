@@ -1,6 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _21
+	// EASY
+	internal class _21
 	{
 		public class ListNode
 		{
@@ -15,15 +16,6 @@
 
 		public static ListNode MergeTwoLists(ListNode list1, ListNode list2)
 		{
-			if (list1 == null)
-			{
-				return list2;
-			}
-			if (list2 == null)
-			{
-				return list1;
-			}
-
 			var temp = new ListNode(0);
 			var current = temp;
 			while (list1 != null && list2 != null)
