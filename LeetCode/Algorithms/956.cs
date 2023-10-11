@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms;
 
 // HARD
-public class _956
+internal class _956
 {
 	public static int TallestBillboard(int[] rods)
 	{
