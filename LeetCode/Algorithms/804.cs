@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Leetcode.Algorithms
+namespace LeetCode.Algorithms
 {
 	// EASY
 	internal class _804
