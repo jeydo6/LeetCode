@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _557
+	internal class _557
 	{
 		public static string ReverseWords(string s)
 		{
