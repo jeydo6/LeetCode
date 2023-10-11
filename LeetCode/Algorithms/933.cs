@@ -1,26 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Leetcode.Algorithms
+﻿namespace Leetcode.Algorithms
 {
 	public class _933
 	{
 		public class RecentCounter
 		{
-			Queue<Int32> q;
+			private readonly Queue<int> _queue;
+
 			public RecentCounter()
 			{
-				q = new Queue<Int32>();
+				_queue = new Queue<int>();
 			}
 
-			public Int32 Ping(Int32 t)
+			public int Ping(int t)
 			{
-				q.Enqueue(t);
-				while (q.Peek() < t - 3000)
+				_queue.Enqueue(t);
+				while (_queue.Peek() < t - 3000)
 				{
-					q.Dequeue();
+					_queue.Dequeue();
 				}
-				return q.Count;
+				return _queue.Count;
 			}
 		}
 	}
