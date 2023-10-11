@@ -1,6 +1,7 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _153
+	// MEDIUM
+	internal class _153
 	{
 		public static int FindMin(int[] nums)
 		{
@@ -8,20 +9,14 @@
 			var hi = nums.Length - 1;
 			while (lo < hi)
 			{
-				if (nums[lo] < nums[hi])
-				{
-					return nums[lo];
-				}
-
 				var mid = (lo + hi) / 2;
-
-				if (nums[mid] >= nums[lo])
+				if (nums[mid] < nums[hi])
 				{
-					lo = mid + 1;
+					hi = mid;
 				}
 				else
 				{
-					hi = mid;
+					lo = mid + 1;
 				}
 			}
 			return nums[lo];
