@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Algorithms
 {
-	class _35
+	internal class _35
 	{
 		public static int SearchInsert(int[] nums, int target)
 		{
