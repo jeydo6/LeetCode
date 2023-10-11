@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Leetcode.Algorithms
+namespace LeetCode.Algorithms
 {
 	internal class _1122
 	{
