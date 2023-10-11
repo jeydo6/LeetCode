@@ -1,48 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Leetcode.Algorithms
 {
-    public class _1047
-    {
-        public String RemoveDuplicates(String S)
-        {
-            while (S.Length > 1)
-            {
-                StringBuilder sb = new StringBuilder(S);
+	internal class _1047
+	{
+		public static string RemoveDuplicates(string str)
+		{
+			while (str.Length > 1)
+			{
+				var sb = new StringBuilder(str);
 
-                Int32 i = 0;
-                Int32 j = 0;
+				var i = 0;
+				var j = 0;
 
-                while (i < S.Length - 1)
-                {
-                    if (S[i] == S[i + 1])
-                    {
-                        sb.Remove(j, 2);
+				while (i < str.Length - 1)
+				{
+					if (str[i] == str[i + 1])
+					{
+						sb.Remove(j, 2);
 
-                        i += 2;
-                    }
-                    else
-                    {
-                        i++;
-                        j++;
-                    }
-                }
+						i += 2;
+					}
+					else
+					{
+						i++;
+						j++;
+					}
+				}
 
-                if (sb.Length != S.Length)
-                {
-                    S = sb.ToString();
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-            return S;
-        }
-    }
+				if (sb.Length != str.Length)
+				{
+					str = sb.ToString();
+				}
+				else
+				{
+					break;
+				}
+			}
+			return str;
+		}
+	}
 }
