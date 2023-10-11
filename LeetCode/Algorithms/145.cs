@@ -27,12 +27,13 @@ namespace LeetCode.Algorithms
 				if (node != null)
 				{
 					list.Insert(0, node.val);
-					stack.Push(node.left);
+					stack.Push(node);
 					node = node.right;
 				}
 				else
 				{
-					node = stack.Pop();
+					var temp = stack.Pop();
+					node = temp.left;
 				}
 			}
 			return list;
