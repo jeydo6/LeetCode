@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace LeetCode.Algorithms;
 
 // HARD
