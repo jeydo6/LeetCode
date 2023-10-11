@@ -1,23 +1,23 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _1572
 {
-	class _1572
+	public static int DiagonalSum(int[][] mat)
 	{
-		public static int DiagonalSum(int[][] matrix)
+		var result = 0;
+
+		var length = mat.Length;
+		for (var i = 0; i < length / 2; i++)
 		{
-			var result = 0;
-
-			var length = matrix.Length;
-			for (var i = 0; i < length / 2; i++)
-			{
-				result += matrix[i][i] + matrix[i][^(i + 1)] + matrix[^(i + 1)][i] + matrix[^(i + 1)][^(i + 1)];
-			}
-
-			if (length % 2 == 1)
-			{
-				result += matrix[length / 2][length / 2];
-			}
-
-			return result;
+			result += mat[i][i] + mat[i][^(i + 1)] + mat[^(i + 1)][i] + mat[^(i + 1)][^(i + 1)];
 		}
+
+		if (length % 2 == 1)
+		{
+			result += mat[length / 2][length / 2];
+		}
+
+		return result;
 	}
 }
