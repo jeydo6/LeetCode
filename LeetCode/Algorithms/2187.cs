@@ -6,7 +6,7 @@ internal class _2187
 	public static long MinimumTime(int[] time, int totalTrips)
 	{
 		var start = 1L;
-		var end = 1000000007L;
+		var end = (long)1e14;
 		while (start <= end)
 		{
 			var trip = 0L;
