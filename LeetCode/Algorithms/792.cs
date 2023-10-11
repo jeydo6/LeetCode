@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	internal class _729
+	internal class _792
 	{
 		private class Node
 		{
