@@ -5,7 +5,7 @@
 		public static int Search(int[] nums, int target)
 		{
 			var lo = 0;
-			var hi = nums[^1];
+			var hi = nums.Length - 1;
 			while (lo < hi)
 			{
 				var mid = lo + (hi - lo) / 2;
