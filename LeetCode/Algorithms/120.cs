@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms
 {
 	// MEDIUM
-	class _120
+	internal class _120
 	{
 		public static int MinimumTotal(IList<IList<int>> triangle)
 		{
