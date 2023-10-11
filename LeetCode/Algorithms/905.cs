@@ -1,34 +1,29 @@
 namespace LeetCode.Algorithms
 {
+	// EASY
 	internal class _905
 	{
-		public static int[] SortArrayByParity(int[] numbers)
+		public static int[] SortArrayByParity(int[] nums)
 		{
-			var result = new int[numbers.Length];
-			var i = 0;
-			var j = numbers.Length - 1;
-			foreach (var number in numbers)
+			var lo = 0;
+			var hi = nums.Length - 1;
+			while (lo < hi)
 			{
-				if (number % 2 == 0)
+				if (nums[lo] % 2 > nums[hi] % 2)
 				{
-					result[i++] = number;
+					(nums[lo], nums[hi]) = (nums[hi], nums[lo]);
 				}
-				else
+
+				if (nums[lo] % 2 == 0)
 				{
-					result[j--] = number;
+					lo++;
+				}
+				if (nums[hi] % 2 == 1)
+				{
+					hi--;
 				}
 			}
-			return result;
+			return nums;
 		}
-
-		//public static int[] SortArrayByParity(int[] numbers)
-		//{
-		//	Array.Sort(numbers, (m, n) =>
-		//	{
-		//		return m % 2 - n % 2;
-		//	});
-
-		//	return numbers;
-		//}
 	}
 }
