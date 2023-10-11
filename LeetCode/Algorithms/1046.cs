@@ -2,29 +2,55 @@
 
 namespace Leetcode.Algorithms
 {
+	// EASY
 	internal class _1046
 	{
 		public static int LastStoneWeight(int[] stones)
 		{
-			if (stones.Length == 1)
+			var maxWeight = stones[0];
+			for (var i = 0; i < stones.Length; i++)
 			{
-				return stones[0];
+				maxWeight = Math.Max(maxWeight, stones[i]);
 			}
 
-			while (true)
+			var buckets = new int[maxWeight + 1];
+			for (var i = 0; i < stones.Length; i++)
 			{
-				Array.Sort(stones, (a, b) => b - a);
+				buckets[stones[i]]++;
+			}
 
-				if (stones[1] == 0)
+			var biggestWeight = 0;
+			var currentWeight = maxWeight;
+			while (currentWeight > 0)
+			{
+				if (buckets[currentWeight] == 0)
 				{
-					break;
+					currentWeight--;
 				}
-
-				stones[0] -= stones[1];
-				stones[1] = 0;
+				else if (biggestWeight == 0)
+				{
+					buckets[currentWeight] %= 2;
+					if (buckets[currentWeight] == 1)
+					{
+						biggestWeight = currentWeight;
+					}
+					currentWeight--;
+				}
+				else
+				{
+					buckets[currentWeight]--;
+					if (biggestWeight - currentWeight <= currentWeight)
+					{
+						buckets[biggestWeight - currentWeight]++;
+						biggestWeight = 0;
+					}
+					else
+					{
+						biggestWeight -= currentWeight;
+					}
+				}
 			}
-
-			return stones[0];
+			return biggestWeight;
 		}
 	}
 }
