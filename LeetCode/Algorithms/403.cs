@@ -1,9 +1,11 @@
+using System.Collections.Generic;
+
 namespace LeetCode.Algorithms;
 
 // HARD
 internal static class _403
 {
-    public bool CanCross(int[] stones)
+    public static bool CanCross(int[] stones)
     {
         var n = stones.Length;
         var mark = new Dictionary<int, int>();
