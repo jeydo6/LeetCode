@@ -27,9 +27,9 @@ internal class _109
 		}
 	}
 
-	public static TreeNode SortedListToBST(ListNode head, ListNode tail)
+	public static TreeNode SortedListToBST(ListNode head, ListNode tail = null)
 	{
-		if (head == null || tail == null)
+		if (head == null || head == tail)
 		{
 			return null;
 		}
