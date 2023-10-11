@@ -3,7 +3,7 @@ using System;
 namespace LeetCode.Algorithms;
 
 // HARD
-public class _1575
+internal class _1575
 {
 	private const int Modulo = 1_000_000_007;
 
