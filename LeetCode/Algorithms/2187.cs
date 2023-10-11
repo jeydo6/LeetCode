@@ -6,7 +6,7 @@ internal class _2187
 	public static long MinimumTime(int[] time, int totalTrips)
 	{
 		var start = 1L;
-		var end = long.MaxValue;
+		var end = 1000000007L;
 		while (start <= end)
 		{
 			var trip = 0L;
@@ -14,7 +14,8 @@ internal class _2187
 			for (var i = 0; i < time.Length; i++)
 			{
 				trip += mid / time[i];
-			}	
+			}
+
 			if (trip < totalTrips)
 			{
 				start = mid + 1;
