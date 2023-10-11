@@ -2,7 +2,7 @@ using System;
 
 namespace Leetcode.Algorithms
 {
-	public class _977
+	internal class _977
 	{
 		public static int[] SortedSquares(int[] nums)
 		{
