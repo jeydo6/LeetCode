@@ -5,7 +5,7 @@ internal class _1523
 {
 	public static int CountOdds(int low, int high)
 	{
-		if ((low & 2) == 0)
+		if (low % 2 == 0)
 		{
 			low++;
 		}
