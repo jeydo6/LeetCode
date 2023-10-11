@@ -1,59 +1,58 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// MEDIUM
+internal class _95
 {
-	// MEDIUM
-	class _95
+	public class TreeNode
 	{
-		public class TreeNode
+		public int val;
+		public TreeNode left;
+		public TreeNode right;
+		public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
 		{
-			public int val;
-			public TreeNode left;
-			public TreeNode right;
-			public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-			{
-				this.val = val;
-				this.left = left;
-				this.right = right;
-			}
+			this.val = val;
+			this.left = left;
+			this.right = right;
 		}
+	}
 
-		public IList<TreeNode> GenerateTrees(int n)
+	public static IList<TreeNode> GenerateTrees(int n)
+	{
+		return GenerateTrees(1, n);
+	}
+
+	private static IList<TreeNode> GenerateTrees(int start, int end)
+	{
+		if (start > end)
 		{
-			return GenerateTrees(1, n);
+			return new List<TreeNode>
+			{
+				null
+			};
 		}
-
-		private IList<TreeNode> GenerateTrees(int start, int end)
+		else if (start == end)
 		{
-			if (start > end)
+			return new List<TreeNode>
 			{
-				return new List<TreeNode>
-				{
-					null
-				};
-			}
-			else if (start == end)
+				new TreeNode(start)
+			};
+		}
+		else
+		{
+			var result = new List<TreeNode>();
+			for (var i = start; i <= end; i++)
 			{
-				return new List<TreeNode>
+				foreach (var l in GenerateTrees(start, i - 1))
 				{
-					new TreeNode(start)
-				};
-			}
-			else
-			{
-				var result = new List<TreeNode>();
-				for (var i = start; i <= end; i++)
-				{
-					foreach (var l in GenerateTrees(start, i - 1))
+					foreach (var r in GenerateTrees(i + 1, end))
 					{
-						foreach (var r in GenerateTrees(i + 1, end))
-						{
-							result.Add(new TreeNode(i, l, r));
-						}
+						result.Add(new TreeNode(i, l, r));
 					}
 				}
-				return result;
 			}
+			return result;
 		}
 	}
 }
