@@ -1,14 +1,11 @@
-﻿namespace LeetCode.Algorithms
-{
-	// MEDIUM
-	internal class _208
-	{
-		public static int Result()
-		{
-			return 0;
-		}
+﻿namespace LeetCode.Algorithms;
 
-		public class TrieNode
+// MEDIUM
+internal class _208
+{
+	public class Trie
+	{
+		private class TrieNode
 		{
 			public char value;
 
@@ -17,62 +14,59 @@
 			public TrieNode[] children = new TrieNode[26];
 		}
 
-		public class Trie
+		private readonly TrieNode _root;
+
+		public Trie()
 		{
-			private readonly TrieNode _root;
-
-			public Trie()
+			_root = new TrieNode
 			{
-				_root = new TrieNode
-				{
-					value = ' '
-				};
-			}
+				value = ' '
+			};
+		}
 
-			public void Insert(string word)
+		public void Insert(string word)
+		{
+			var node = _root;
+			for (var i = 0; i < word.Length; i++)
 			{
-				var node = _root;
-				for (var i = 0; i < word.Length; i++)
+				if (node.children[word[i] - 'a'] == null)
 				{
-					if (node.children[word[i] - 'a'] == null)
+					node.children[word[i] - 'a'] = new TrieNode
 					{
-						node.children[word[i] - 'a'] = new TrieNode
-						{
-							value = word[i]
-						};
-					}
-					node = node.children[word[i] - 'a'];
+						value = word[i]
+					};
 				}
-				node.isWord = true;
+				node = node.children[word[i] - 'a'];
 			}
+			node.isWord = true;
+		}
 
-			public bool Search(string word)
+		public bool Search(string word)
+		{
+			var node = _root;
+			for (var i = 0; i < word.Length; i++)
 			{
-				var node = _root;
-				for (var i = 0; i < word.Length; i++)
+				if (node.children[word[i] - 'a'] == null)
 				{
-					if (node.children[word[i] - 'a'] == null)
-					{
-						return false;
-					}
-					node = node.children[word[i] - 'a'];
+					return false;
 				}
-				return node.isWord;
+				node = node.children[word[i] - 'a'];
 			}
+			return node.isWord;
+		}
 
-			public bool StartsWith(string prefix)
+		public bool StartsWith(string prefix)
+		{
+			var node = _root;
+			for (var i = 0; i < prefix.Length; i++)
 			{
-				var node = _root;
-				for (var i = 0; i < prefix.Length; i++)
+				if (node.children[prefix[i] - 'a'] == null)
 				{
-					if (node.children[prefix[i] - 'a'] == null)
-					{
-						return false;
-					}
-					node = node.children[prefix[i] - 'a'];
+					return false;
 				}
-				return true;
+				node = node.children[prefix[i] - 'a'];
 			}
+			return true;
 		}
 	}
 }
