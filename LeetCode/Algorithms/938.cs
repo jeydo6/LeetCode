@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Leetcode.Algorithms;
+namespace LeetCode.Algorithms;
 
 // EASY
 internal class _938
