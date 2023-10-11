@@ -55,6 +55,7 @@ namespace LeetCode.Algorithms
 			{
 				result.Add(columns[i]);
 			}
+
 			return result;
 		}
 	}
