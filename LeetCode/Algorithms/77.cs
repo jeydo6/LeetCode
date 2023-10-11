@@ -1,5 +1,6 @@
 ﻿namespace LeetCode.Algorithms
 {
+	// MEDIUM
 	class _77
 	{
 		public static IList<IList<int>> Combine(int n, int k, int start = 1, IList<int> current = null)
