@@ -20,13 +20,13 @@ internal class _2316
 		}
 
 		var result = 0L;
-		var visited = new bool[n];
 		var visitedCount = 0L;
+		var visited = new bool[n];
 		for (var from = 0; from < n; from++)
 		{
-			if (visited[from])
+			if (!visited[from])
 			{
-				var count = CountPairs(from, graph, new bool[n]);
+				var count = CountPairs(from, graph, visited);
 				result += visitedCount * count;
 				visitedCount += count;
 			}
