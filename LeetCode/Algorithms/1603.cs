@@ -1,28 +1,28 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _1603
 {
-	class _1603
+	public class ParkingSystem
 	{
-		public class ParkingSystem
+		private readonly int[] _slots;
+
+		public ParkingSystem(int big, int medium, int small)
 		{
-			private readonly int[] _slots;
+			_slots = new int[3] { big, medium, small };
+		}
 
-			public ParkingSystem(int big, int medium, int small)
+		public bool AddCar(int carType)
+		{
+			if (_slots[carType - 1] > 0)
 			{
-				_slots = new int[3] { big, medium, small };
+				_slots[carType - 1]--;
+
+				return true;
 			}
-
-			public bool AddCar(int carType)
+			else
 			{
-				if (_slots[carType - 1] > 0)
-				{
-					_slots[carType - 1]--;
-
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+				return false;
 			}
 		}
 	}
