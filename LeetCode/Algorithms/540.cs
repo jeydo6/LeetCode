@@ -1,25 +1,24 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// MEDIUM
+internal class _540
 {
-	// MEDIUM
-	internal class _540
+	public static int SingleNonDuplicate(int[] nums)
 	{
-		public static int SingleNonDuplicate(int[] nums)
+		var lo = 0;
+		var hi = nums.Length - 1;
+		while (lo < hi)
 		{
-			var left = 0;
-			var right = nums.Length - 1;
-			while (left < right)
+			var mid = (lo + hi) / 2;
+			if ((mid % 2 == 0 && nums[mid] == nums[mid + 1]) || (mid % 2 == 1 && nums[mid] == nums[mid - 1]))
 			{
-				var mid = (left + right) / 2;
-				if ((mid % 2 == 0 && nums[mid] == nums[mid + 1]) || (mid % 2 == 1 && nums[mid] == nums[mid - 1]))
-				{
-					left = mid + 1;
-				}
-				else
-				{
-					right = mid;
-				}
+				lo = mid + 1;
 			}
-			return nums[left];
+			else
+			{
+				hi = mid;
+			}
 		}
+		return nums[lo];
 	}
 }
