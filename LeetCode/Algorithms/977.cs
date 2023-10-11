@@ -1,6 +1,6 @@
 using System;
 
-namespace Leetcode.Algorithms
+namespace LeetCode.Algorithms
 {
 	internal class _977
 	{
