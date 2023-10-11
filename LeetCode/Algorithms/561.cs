@@ -1,4 +1,6 @@
-﻿namespace Leetcode.Algorithms
+﻿using System;
+
+namespace Leetcode.Algorithms
 {
 	public class _561
 	{

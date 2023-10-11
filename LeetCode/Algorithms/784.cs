@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Algorithms
+﻿using System.Collections.Generic;
+
+namespace LeetCode.Algorithms
 {
 	// MEDIUM
 	class _784

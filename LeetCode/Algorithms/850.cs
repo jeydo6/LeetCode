@@ -1,4 +1,8 @@
-﻿namespace LeetCode.Algorithms
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LeetCode.Algorithms
 {
 	class _850
 	{

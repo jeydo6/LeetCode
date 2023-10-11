@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Algorithms
+﻿using System;
+
+namespace LeetCode.Algorithms
 {
 	class _1460
 	{
