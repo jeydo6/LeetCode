@@ -17,6 +17,7 @@ internal class _557
 			}
 			result.Append(' ');
 		}
+
 		return result
 			.ToString()
 			.TrimEnd();
