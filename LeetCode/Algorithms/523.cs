@@ -7,20 +7,18 @@ internal class _523
 {
 	public static bool CheckSubarraySum(int[] nums, int k)
 	{
-		var dict = new Dictionary<int, int>
+		var sum = new int[nums.Length + 1];
+		for (var i = 1; i <= nums.Length; i++)
 		{
-			[0] = 0
-		};
+			sum[i] = sum[i - 1] + nums[i - 1];
+		}
 
-		var sum = 0;
-		for (var i = 0; i < nums.Length; i++)
+		var hashSet = new HashSet<int>();
+		for (var i = 2; i <= nums.Length; i++)
 		{
-			sum += nums[i];
-			if (!dict.ContainsKey(sum % k))
-			{
-				dict[sum % k] = i + 1;
-			}
-			else if (dict[sum % k] < i)
+			hashSet.Add(sum[i - 2] % k);
+			
+			if (hashSet.Contains(sum[i] % k))
 			{
 				return true;
 			}
