@@ -1,25 +1,23 @@
 ﻿using System.Collections.Generic;
 
-namespace Leetcode.Algorithms
+namespace LeetCode.Algorithms
 {
 	// EASY
 	internal class _1
 	{
 		public static int[] TwoSum(int[] nums, int target)
 		{
-			var result = new int[2];
 			var dict = new Dictionary<int, int>();
-			for (int i = 0; i < nums.Length; i++)
+			for (var i = 0; i < nums.Length; i++)
 			{
-				if (dict.ContainsKey(target - nums[i]))
+				var complement = target - nums[i];
+				if (dict.ContainsKey(complement))
 				{
-					result[1] = i;
-					result[0] = dict[target - nums[i]];
-					return result;
+					return new int[] { dict[complement], i };
 				}
 				dict[nums[i]] = i;
 			}
-			return result;
+			return null;
 		}
 	}
 }
