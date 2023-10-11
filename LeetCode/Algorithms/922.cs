@@ -1,4 +1,4 @@
-﻿namespace Leetcode.Algorithms
+﻿namespace LeetCode.Algorithms
 {
 	internal class _922
 	{
