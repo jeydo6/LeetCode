@@ -1,40 +1,39 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// MEDIUM
+internal class _142
 {
-	// MEDIUM
-	internal class _142
+	public class ListNode
 	{
-		public class ListNode
+		public int val;
+		public ListNode next;
+		public ListNode(int x)
 		{
-			public int val;
-			public ListNode next;
-			public ListNode(int x)
-			{
-				val = x;
-				next = null;
-			}
+			val = x;
+			next = null;
 		}
+	}
 
-		public static ListNode DetectCycle(ListNode head)
+	public static ListNode DetectCycle(ListNode head)
+	{
+		var slow = head;
+		var fast = head;
+		while (fast != null && fast.next != null)
 		{
-			var slow = head;
-			var fast = head;
-			while (fast != null && fast.next != null)
-			{
-				fast = fast.next.next;
-				slow = slow.next;
+			fast = fast.next.next;
+			slow = slow.next;
 
-				if (fast == slow)
+			if (fast == slow)
+			{
+				var slow2 = head;
+				while (slow2 != slow)
 				{
-					var slow2 = head;
-					while (slow2 != slow)
-					{
-						slow = slow.next;
-						slow2 = slow2.next;
-					}
-					return slow;
+					slow = slow.next;
+					slow2 = slow2.next;
 				}
+				return slow;
 			}
-			return null;
 		}
+		return null;
 	}
 }
