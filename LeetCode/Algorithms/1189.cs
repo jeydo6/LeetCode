@@ -2,7 +2,7 @@
 
 namespace Leetcode.Algorithms
 {
-	public class _1189
+	internal class _1189
 	{
 		public static int MaxNumberOfBalloons(string text)
 		{
