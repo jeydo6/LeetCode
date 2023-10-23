@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// EASY
+internal class _342
 {
-	// EASY
-	internal class _342
+	public static bool IsPowerOfFour(int n)
 	{
-		public static bool IsPowerOfFour(int n)
-		{
-			return (n > 0) && (Math.Log(n) / Math.Log(2) % 2 == 0);
-		}
+		return (n > 0) && (Math.Log(n) / Math.Log(2) % 2 == 0);
 	}
 }
