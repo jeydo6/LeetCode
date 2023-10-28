@@ -1,36 +1,35 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// HARD
+internal class _1220
 {
-	// HARD
-	internal class _1220
+	private const long Modulo = 1000000007;
+
+	public static int CountVowelPermutation(int n)
 	{
-		private const long Modulo = 1000000007;
+		var aCount = 1L;
+		var eCount = 1L;
+		var iCount = 1L;
+		var oCount = 1L;
+		var uCount = 1L;
 
-		public static int CountVowelPermutation(int n)
+		for (var i = 1; i < n; i++)
 		{
-			var aCount = 1L;
-			var eCount = 1L;
-			var iCount = 1L;
-			var oCount = 1L;
-			var uCount = 1L;
+			var aCountNew = (eCount + iCount + uCount) % Modulo;
+			var eCountNew = (aCount + iCount) % Modulo;
+			var iCountNew = (eCount + oCount) % Modulo;
+			var oCountNew = (iCount) % Modulo;
+			var uCountNew = (iCount + oCount) % Modulo;
 
-			for (var i = 1; i < n; i++)
-			{
-				var aCountNew = (eCount + iCount + uCount) % Modulo;
-				var eCountNew = (aCount + iCount) % Modulo;
-				var iCountNew = (eCount + oCount) % Modulo;
-				var oCountNew = (iCount) % Modulo;
-				var uCountNew = (iCount + oCount) % Modulo;
-
-				aCount = aCountNew;
-				eCount = eCountNew;
-				iCount = iCountNew;
-				oCount = oCountNew;
-				uCount = uCountNew;
-			}
-
-			var result = (aCount + eCount + iCount + oCount + uCount) % Modulo;
-
-			return (int)result;
+			aCount = aCountNew;
+			eCount = eCountNew;
+			iCount = iCountNew;
+			oCount = oCountNew;
+			uCount = uCountNew;
 		}
+
+		var result = (aCount + eCount + iCount + oCount + uCount) % Modulo;
+
+		return (int)result;
 	}
 }
