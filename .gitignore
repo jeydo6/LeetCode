@@ -41,6 +41,9 @@ bld/
 # JetBrains cache/options directory
 .idea/
 
+# Visual Studio Code options directory
+.vscode/
+
 # Visual Studio 2017 auto generated files
 Generated\ Files/
 
