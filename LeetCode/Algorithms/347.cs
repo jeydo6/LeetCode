@@ -37,6 +37,7 @@ internal class _347
 		{
 			result[i] = pQueue.Dequeue();
 		}
+
 		return result;
 	}
 }
