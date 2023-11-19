@@ -21,23 +21,22 @@ internal class _692
 		var comparer = Comparer<string>.Create((w1, w2) =>
 			counts[w1] == counts[w2] ? string.CompareOrdinal(w2, w1) : counts[w1] - counts[w2]
 		);
-		var pqueue = new PriorityQueue<string, string>(comparer);
+		var pQueue = new PriorityQueue<string, string>(comparer);
 
 		foreach (var word in counts.Keys)
 		{
-			pqueue.Enqueue(word, word);
-			if (pqueue.Count > k)
+			pQueue.Enqueue(word, word);
+			if (pQueue.Count > k)
 			{
-				pqueue.Dequeue();
+				pQueue.Dequeue();
 			}
 		}
 
-		var result = new List<string>();
-		while (pqueue.Count > 0)
+		var result = new string[k];
+		for (var i = k - 1; i >= 0; --i)
 		{
-			result.Add(pqueue.Dequeue());
+			result[i] = pQueue.Dequeue();
 		}
-		result.Reverse();
 
 		return result;
 	}
