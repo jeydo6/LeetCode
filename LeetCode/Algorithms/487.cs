@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _487
+internal sealed class _487
 {
 	public static int FindMaxConsecutiveOnes(int[] nums)
 	{
