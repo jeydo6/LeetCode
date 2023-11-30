@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // HARD
-internal class _42
+internal sealed class _42
 {
 	public static int Trap(int[] height)
 	{
