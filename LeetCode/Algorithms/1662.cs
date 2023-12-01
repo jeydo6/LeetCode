@@ -1,37 +1,36 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal class _1662
 {
-	// EASY
-	internal class _1662
+	public static bool ArrayStringsAreEqual(string[] word1, string[] word2)
 	{
-		public static bool ArrayStringsAreEqual(string[] word1, string[] word2)
+		var wp1 = 0;
+		var wp2 = 0;
+
+		var sp1 = 0;
+		var sp2 = 0;
+
+		while (wp1 < word1.Length && wp2 < word2.Length)
 		{
-			var word1Pointer = 0;
-			var word2Pointer = 0;
-
-			var string1Pointer = 0;
-			var string2Pointer = 0;
-
-			while (word1Pointer < word1.Length && word2Pointer < word2.Length)
+			if (word1[wp1][sp1++] != word2[wp2][sp2++])
 			{
-				if (word1[word1Pointer][string1Pointer++] != word2[word2Pointer][string2Pointer++])
-				{
-					return false;
-				}
-
-				if (string1Pointer == word1[word1Pointer].Length)
-				{
-					word1Pointer++;
-					string1Pointer = 0;
-				}
-
-				if (string2Pointer == word2[word2Pointer].Length)
-				{
-					word2Pointer++;
-					string2Pointer = 0;
-				}
+				return false;
 			}
 
-			return word1Pointer == word1.Length && word2Pointer == word2.Length;
+			if (sp1 == word1[wp1].Length)
+			{
+				wp1++;
+				sp1 = 0;
+			}
+
+			if (sp2 == word2[wp2].Length)
+			{
+				wp2++;
+				sp2 = 0;
+			}
 		}
+
+		return wp1 == word1.Length && wp2 == word2.Length;
 	}
 }
