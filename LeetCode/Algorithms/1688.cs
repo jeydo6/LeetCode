@@ -1,24 +1,24 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal sealed class _1688
 {
-	class _1688
+	public static int NumberOfMatches(int n)
 	{
-		public static int NumberOfMatches(int n)
+		var result = 0;
+		while (n > 1)
 		{
-			var result = 0;
-			while (n > 1)
+			if (n % 2 == 0)
 			{
-				if (n % 2 == 0)
-				{
-					result += n / 2;
-					n /= 2;
-				}
-				else
-				{
-					result += (n - 1) / 2;
-					n = (n - 1) / 2 + 1;
-				}
+				result += n / 2;
+				n /= 2;
 			}
-			return result;
+			else
+			{
+				result += (n - 1) / 2;
+				n = (n - 1) / 2 + 1;
+			}
 		}
+		return result;
 	}
 }
