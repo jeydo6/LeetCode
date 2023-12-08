@@ -4,7 +4,7 @@ using System.Text;
 namespace LeetCode.Algorithms;
 
 // EASY
-internal class _606
+internal sealed class _606
 {
 	public class TreeNode
 	{
