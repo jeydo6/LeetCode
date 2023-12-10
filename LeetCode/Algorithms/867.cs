@@ -1,26 +1,25 @@
-﻿namespace LeetCode.Algorithms
-{
-	// EASY
-	internal class _867
-	{
-		public static int[][] Transpose(int[][] matrix)
-		{
-			var n = matrix.Length;
-			var m = matrix[0].Length;
+﻿namespace LeetCode.Algorithms;
 
-			var transponsed = new int[m][];
+// EASY
+internal sealed class _867
+{
+	public static int[][] Transpose(int[][] matrix)
+	{
+		var n = matrix.Length;
+		var m = matrix[0].Length;
+
+		var transponsed = new int[m][];
+		for (var j = 0; j < m; j++)
+		{
+			transponsed[j] = new int[n];
+		}
+		for (var i = 0; i < n; i++)
+		{
 			for (var j = 0; j < m; j++)
 			{
-				transponsed[j] = new int[n];
+				transponsed[j][i] = matrix[i][j];
 			}
-			for (var i = 0; i < n; i++)
-			{
-				for (var j = 0; j < m; j++)
-				{
-					transponsed[j][i] = matrix[i][j];
-				}
-			}
-			return transponsed;
 		}
+		return transponsed;
 	}
 }
