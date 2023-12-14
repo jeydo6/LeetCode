@@ -9,7 +9,7 @@ internal sealed class _1582
         var colCount = new int[mat[0].Length];
         for (var row = 0; row < rowCount.Length; row++)
         {
-            for (int col = 0; col < colCount.Length; col++)
+            for (var col = 0; col < colCount.Length; col++)
             {
                 if (mat[row][col] == 1)
                 {
