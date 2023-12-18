@@ -3,11 +3,11 @@
 namespace LeetCode.Algorithms;
 
 // EASY
-internal class _1913
+internal sealed class _1913
 {
 	public static int MaxProductDifference(int[] numbers)
 	{
 		Array.Sort(numbers);
-		return numbers[^1] * numbers[^2] - numbers[1] * numbers[0];
+		return numbers[^2] * numbers[^1] - numbers[0] * numbers[1];
 	}
 }
