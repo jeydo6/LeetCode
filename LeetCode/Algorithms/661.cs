@@ -9,7 +9,7 @@ internal sealed class _661
         var m = img[0].Length;
         for (var i = 0; i < n; i++)
         {
-            for (var j = 0; j < m; j++)
+            for (var j = 0; j < m; j++) 
             {
                 var sum = 0;
                 var count = 0;
