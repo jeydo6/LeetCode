@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _91
+internal sealed class _91
 {
 	public static int NumDecodings(string s)
 	{
