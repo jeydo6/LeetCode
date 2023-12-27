@@ -2,7 +2,8 @@
 
 namespace LeetCode.Algorithms;
 
-internal class _1578
+// MEDIUM
+internal sealed class _1578
 {
 	public static int MinCost(string colors, int[] neededTime)
 	{
