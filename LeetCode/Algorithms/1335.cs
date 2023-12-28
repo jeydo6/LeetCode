@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // HARD
-internal class _1335
+internal sealed class _1335
 {
 	public static int MinDifficulty(int[] jobDifficulty, int d)
 	{
