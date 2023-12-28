@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms;
 
 // HARD
-internal class _1531
+internal sealed class _1531
 {
 	public static int GetLengthOfOptimalCompression(string s, int k)
 	{
