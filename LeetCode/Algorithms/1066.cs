@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _1066
+internal sealed class _1066
 {
 	public static int AssignBikes(int[][] workers, int[][] bikes)
 	{
