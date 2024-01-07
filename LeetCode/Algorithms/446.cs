@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // HARD
-internal class _446
+internal sealed class _446
 {
 	public static int NumberOfArithmeticSlices(int[] nums)
 	{
