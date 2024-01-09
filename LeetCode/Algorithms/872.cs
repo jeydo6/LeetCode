@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // EASY
-internal class _872
+internal sealed class _872
 {
 	public class TreeNode
 	{
