@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _1026
+internal sealed class _1026
 {
 	public class TreeNode
 	{
