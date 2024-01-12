@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms;
 
 // EASY
-internal class _1704
+internal sealed class _1704
 {
 	public static bool HalvesAreAlike(string s)
 	{
