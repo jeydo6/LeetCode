@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _1657
+internal sealed class _1657
 {
 	public static bool CloseStrings(string word1, string word2)
 	{
@@ -12,18 +12,18 @@ internal class _1657
 			return false;
 		}
 
-		var word1Dict = new int[26];
-		var word2Dict = new int[26];
+		var words1 = new int[26];
+		var words2 = new int[26];
 		var word1Bit = 0;
 		var word2Bit = 0;
 		for (var i = 0; i < word1.Length; i++)
 		{
-			word1Dict[word1[i] - 'a']++;
+			words1[word1[i] - 'a']++;
 			word1Bit |= (1 << (word1[i] - 'a'));
 		}
 		for (var i = 0; i < word2.Length; i++)
 		{
-			word2Dict[word2[i] - 'a']++;
+			words2[word2[i] - 'a']++;
 			word2Bit |= (1 << (word2[i] - 'a'));
 		}
 
@@ -32,12 +32,12 @@ internal class _1657
 			return false;
 		}
 
-		Array.Sort(word1Dict);
-		Array.Sort(word2Dict);
+		Array.Sort(words1);
+		Array.Sort(words2);
 
 		for (var i = 0; i < 26; i++)
 		{
-			if (word1Dict[i] != word2Dict[i])
+			if (words1[i] != words2[i])
 			{
 				return false;
 			}
