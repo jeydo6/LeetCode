@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _2225
+internal sealed class _2225
 {
 	public static IList<IList<int>> FindWinners(int[][] matches)
 	{
