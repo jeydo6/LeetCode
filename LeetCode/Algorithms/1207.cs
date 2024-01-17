@@ -3,31 +3,26 @@
 namespace LeetCode.Algorithms;
 
 // EASY
-internal class _1207
+internal sealed class _1207
 {
 	public static bool UniqueOccurrences(int[] arr)
 	{
 		var dict = new Dictionary<int, int>();
 		foreach (var item in arr)
 		{
-			if (dict.ContainsKey(item))
+			if (!dict.TryAdd(item, 1))
 			{
 				dict[item]++;
-			}
-			else
-			{
-				dict[item] = 1;
 			}
 		}
 
 		var hashSet = new HashSet<int>();
 		foreach (var item in dict.Values)
 		{
-			if (hashSet.Contains(item))
+			if (!hashSet.Add(item))
 			{
 				return false;
 			}
-			hashSet.Add(item);
 		}
 		return true;
 	}
