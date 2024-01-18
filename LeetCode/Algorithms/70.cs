@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms;
 
 // EASY
-internal class _70
+internal sealed class _70
 {
 	public static int ClimbStairs(int n)
 	{
