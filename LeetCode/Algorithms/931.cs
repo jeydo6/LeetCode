@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _931
+internal sealed class _931
 {
 	public static int MinFallingPathSum(int[][] matrix)
 	{
