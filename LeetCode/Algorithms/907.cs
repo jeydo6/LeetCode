@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _907
+internal sealed class _907
 {
 	private const int Modulo = 1000000007;
 
