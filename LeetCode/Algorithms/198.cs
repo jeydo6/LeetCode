@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _198
+internal sealed class _198
 {
 	public static int Rob(int[] nums)
 	{
