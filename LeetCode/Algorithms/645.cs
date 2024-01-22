@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms;
 
 // EASY
-internal class _645
+internal sealed class _645
 {
 	public static int[] FindErrorNums(int[] nums)
 	{
