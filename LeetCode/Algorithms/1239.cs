@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _1239
+internal sealed class _1239
 {
 	public static int MaxLength(IList<string> arr)
 	{
