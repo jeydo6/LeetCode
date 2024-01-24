@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _1457
+internal sealed class _1457
 {
 	public class TreeNode
 	{
