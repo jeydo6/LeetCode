@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _1143
+internal sealed class _1143
 {
 	public static int LongestCommonSubsequence(string text1, string text2)
 	{
