@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // EASY
-internal class _232
+internal sealed class _232
 {
 	public class MyQueue
 	{
