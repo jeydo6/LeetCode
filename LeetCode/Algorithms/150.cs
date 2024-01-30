@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _150
+internal sealed class _150
 {
 	public static int EvalRPN(string[] tokens)
 	{
