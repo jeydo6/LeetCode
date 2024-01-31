@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _739
+internal sealed class _739
 {
 	public static int[] DailyTemperatures(int[] temperatures)
 	{
