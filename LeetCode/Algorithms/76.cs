@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // HARD
-internal class _76
+internal sealed class _76
 {
 	public static string MinWindow(string s, string t)
 	{
