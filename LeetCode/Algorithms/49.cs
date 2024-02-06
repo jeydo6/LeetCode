@@ -4,12 +4,12 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _49
+internal sealed class _49
 {
 	public static IList<IList<string>> GroupAnagrams(string[] strs)
 	{
 		var dict = new Dictionary<string, IList<string>>();
-		foreach (string str in strs)
+		foreach (var str in strs)
 		{
 			var chars = str.ToCharArray();
 			Array.Sort(chars);
