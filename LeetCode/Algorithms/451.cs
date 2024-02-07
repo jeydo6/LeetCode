@@ -4,7 +4,7 @@ using System.Text;
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _451
+internal sealed class _451
 {
 	public static string FrequencySort(string s)
 	{
