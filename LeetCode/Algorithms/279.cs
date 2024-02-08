@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _279
+internal sealed class _279
 {
 	public static int NumSquares(int n)
 	{
