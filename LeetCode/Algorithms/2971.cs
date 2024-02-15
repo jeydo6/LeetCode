@@ -8,8 +8,8 @@ internal sealed class _2971
 	public static long LargestPerimeter(int[] nums)
 	{
 		Array.Sort(nums);
-		var previousElementsSum = 0;
-		var result = -1;
+		var previousElementsSum = 0L;
+		var result = -1L;
 		for (var i = 0; i < nums.Length; i++)
 		{
 			if (nums[i] < previousElementsSum)
