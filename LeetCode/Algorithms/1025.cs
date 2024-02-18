@@ -1,10 +1,10 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Algorithms;
+
+// EASY
+internal sealed class _1025
 {
-	internal class _1025
+	public static bool DivisorGame(int n)
 	{
-		public static bool DivisorGame(int n)
-		{
-			return n % 2 == 0;
-		}
+		return n % 2 == 0;
 	}
 }
