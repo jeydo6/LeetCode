@@ -21,7 +21,7 @@ internal class _1834
 		var taskIndex = 0;
 		var currentTime = 0L;
 
-		var comparer = Comparer<int[]>.Create((a, b) => a[1] != b[1] ? (a[1] - b[1]) : (a[2] - b[2]));
+		var comparer = Comparer<int[]>.Create((a, b) => a[1] != b[1] ? a[1] - b[1] : a[2] - b[2]);
 		var pqueue = new PriorityQueue<int[], int[]>(comparer);
 		while (taskIndex < tasks.Length || pqueue.Count > 0)
 		{
