@@ -1,36 +1,36 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeetCode.Algorithms
+namespace LeetCode.Algorithms;
+
+// EASY
+internal sealed class _1021
 {
-	internal class _1021
+	public static string RemoveOuterParentheses(string s)
 	{
-		public static string RemoveOuterParentheses(string s)
+		var sb = new StringBuilder();
+
+		var stack = new Stack<char>();
+		foreach (var ch in s)
 		{
-			var sb = new StringBuilder();
-
-			var stack = new Stack<char>();
-			foreach (var ch in s)
+			if (ch == '(')
 			{
-				if (ch == '(')
+				if (stack.Count != 0)
 				{
-					if (stack.Count != 0)
-					{
-						sb.Append(ch);
-					}
-					stack.Push(ch);
+					sb.Append(ch);
 				}
-				else if (ch == ')')
-				{
-					if (stack.Count != 1)
-					{
-						sb.Append(ch);
-					}
-					stack.Pop();
-				}
+				stack.Push(ch);
 			}
-
-			return sb.ToString();
+			else if (ch == ')')
+			{
+				if (stack.Count != 1)
+				{
+					sb.Append(ch);
+				}
+				stack.Pop();
+			}
 		}
+
+		return sb.ToString();
 	}
 }
