@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms;
 
 // EASY
-internal class _997
+internal sealed class _997
 {
 	public static int FindJudge(int n, int[][] trust)
 	{
