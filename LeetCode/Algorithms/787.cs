@@ -2,7 +2,7 @@
 
 namespace LeetCode.Algorithms;
 
-internal class _787
+internal sealed class _787
 {
 	public static int FindCheapestPrice(int n, int[][] flights, int src, int dst, int k)
 	{
