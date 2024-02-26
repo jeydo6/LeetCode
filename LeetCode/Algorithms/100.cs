@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms;
 
 // EASY
-internal class _100
+internal sealed class _100
 {
 	public class TreeNode
 	{
@@ -22,11 +22,13 @@ internal class _100
 		{
 			return true;
 		}
-		else if (p == null || q == null)
+
+		if (p == null || q == null)
 		{
 			return false;
 		}
-		else if (p.val != q.val)
+
+		if (p.val != q.val)
 		{
 			return false;
 		}
