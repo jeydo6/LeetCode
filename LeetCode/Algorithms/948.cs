@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _948
+internal sealed class _948
 {
 	public static int BagOfTokensScore(int[] tokens, int power)
 	{
