@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _57
+internal sealed class _57
 {
 	public static int[][] Insert(int[][] intervals, int[] newInterval)
 	{
