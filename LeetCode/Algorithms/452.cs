@@ -3,7 +3,7 @@
 namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _452
+internal sealed class _452
 {
 	public static int FindMinArrowShots(int[][] points)
 	{
