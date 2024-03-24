@@ -1,7 +1,7 @@
 ﻿namespace LeetCode.Algorithms;
 
 // MEDIUM
-internal class _287
+internal static class _287
 {
 	public static int FindDuplicate(int[] nums)
 	{
@@ -19,6 +19,7 @@ internal class _287
 			slow = nums[slow];
 			fast = nums[fast];
 		}
+
 		return fast;
 	}
 }
